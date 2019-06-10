@@ -1,0 +1,165 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 25/11/2018 11:36
+  	*/
+
+@font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/font-2/Flaticon.eot");
+    src: url("../fonts/font-2/Flaticon.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/font-2/Flaticon.woff") format("woff"),
+    url("../fonts/font-2/Flaticon.ttf") format("truetype"),
+    url("../fonts/font-2/Flaticon.svg#Flaticon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/font-2/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+    font-family: Flaticon;
+    font-style: normal;
+    line-height: 1;
+}
+
+.flaticon-toilet:before { content: "\f100"; }
+.flaticon-valve:before { content: "\f101"; }
+.flaticon-shower:before { content: "\f102"; }
+.flaticon-faucet:before { content: "\f103"; }
+.flaticon-toilet-1:before { content: "\f104"; }
+.flaticon-leak:before { content: "\f105"; }
+.flaticon-faucet-1:before { content: "\f106"; }
+.flaticon-valve-1:before { content: "\f107"; }
+.flaticon-pipe:before { content: "\f108"; }
+.flaticon-pipe-1:before { content: "\f109"; }
+.flaticon-urinal:before { content: "\f10a"; }
+.flaticon-faucet-2:before { content: "\f10b"; }
+.flaticon-sink:before { content: "\f10c"; }
+.flaticon-pipe-2:before { content: "\f10d"; }
+.flaticon-manometer:before { content: "\f10e"; }
+.flaticon-pipe-3:before { content: "\f10f"; }
+.flaticon-pipe-4:before { content: "\f110"; }
+.flaticon-sawing:before { content: "\f111"; }
+.flaticon-wrench:before { content: "\f112"; }
+.flaticon-pipe-5:before { content: "\f113"; }
+.flaticon-plumber:before { content: "\f114"; }
+.flaticon-leak-1:before { content: "\f115"; }
+.flaticon-house:before { content: "\f116"; }
+.flaticon-plumber-1:before { content: "\f117"; }
+.flaticon-leak-2:before { content: "\f118"; }
+.flaticon-pipe-6:before { content: "\f119"; }
+.flaticon-pipe-7:before { content: "\f11a"; }
+.flaticon-pipe-8:before { content: "\f11b"; }
+.flaticon-extractor:before { content: "\f11c"; }
+.flaticon-filter:before { content: "\f11d"; }
+.flaticon-plunger:before { content: "\f11e"; }
+.flaticon-filter-1:before { content: "\f11f"; }
+.flaticon-pipe-9:before { content: "\f120"; }
+.flaticon-toolbox:before { content: "\f121"; }
+.flaticon-filter-2:before { content: "\f122"; }
+.flaticon-happiness:before { content: "\f123"; }
+.flaticon-smile:before { content: "\f124"; }
+.flaticon-happy:before { content: "\f125"; }
+.flaticon-happiness-1:before { content: "\f126"; }
+.flaticon-happy-1:before { content: "\f127"; }
+.flaticon-happy-2:before { content: "\f128"; }
+.flaticon-trophy:before { content: "\f129"; }
+.flaticon-quality:before { content: "\f12a"; }
+.flaticon-trophy-1:before { content: "\f12b"; }
+.flaticon-medal:before { content: "\f12c"; }
+.flaticon-award:before { content: "\f12d"; }
+.flaticon-trophy-2:before { content: "\f12e"; }
+.flaticon-trophy-3:before { content: "\f12f"; }
+.flaticon-cup:before { content: "\f130"; }
+.flaticon-award-1:before { content: "\f131"; }
+.flaticon-play-button:before { content: "\f132"; }
+.flaticon-play-button-1:before { content: "\f133"; }
+.flaticon-play-button-2:before { content: "\f134"; }
+.flaticon-left-quote:before { content: "\f135"; }
+.flaticon-quotes:before { content: "\f136"; }
+.flaticon-right-quotation-mark:before { content: "\f137"; }
+.flaticon-quote-left:before { content: "\f138"; }
+.flaticon-mail:before { content: "\f139"; }
+.flaticon-email:before { content: "\f13a"; }
+.flaticon-message:before { content: "\f13b"; }
+.flaticon-contact:before { content: "\f13c"; }
+.flaticon-paper-plane:before { content: "\f13d"; }
+.flaticon-message-1:before { content: "\f13e"; }
+.flaticon-email-1:before { content: "\f13f"; }
+.flaticon-email-2:before { content: "\f140"; }
+.flaticon-mail-1:before { content: "\f141"; }
+.flaticon-mail-2:before { content: "\f142"; }
+.flaticon-phone-call:before { content: "\f143"; }
+.flaticon-call:before { content: "\f144"; }
+.flaticon-phone-call-1:before { content: "\f145"; }
+.flaticon-phone-call-2:before { content: "\f146"; }
+.flaticon-customer-service:before { content: "\f147"; }
+.flaticon-phone:before { content: "\f148"; }
+.flaticon-help:before { content: "\f149"; }
+.flaticon-clock:before { content: "\f14a"; }
+.flaticon-time:before { content: "\f14b"; }
+.flaticon-clock-circular-outline:before { content: "\f14c"; }
+.flaticon-clock-1:before { content: "\f14d"; }
+.flaticon-alarm-clock:before { content: "\f14e"; }
+.flaticon-clock-2:before { content: "\f14f"; }
+.flaticon-24-hours:before { content: "\f150"; }
+.flaticon-clock-with-white-face:before { content: "\f151"; }
+.flaticon-clock-3:before { content: "\f152"; }
+.flaticon-next:before { content: "\f153"; }
+.flaticon-back:before { content: "\f154"; }
+.flaticon-left-arrow:before { content: "\f155"; }
+.flaticon-right-arrow:before { content: "\f156"; }
+.flaticon-target:before { content: "\f157"; }
+.flaticon-next-1:before { content: "\f158"; }
+.flaticon-back-1:before { content: "\f159"; }
+.flaticon-right-arrow-1:before { content: "\f15a"; }
+.flaticon-right-arrow-2:before { content: "\f15b"; }
+.flaticon-back-2:before { content: "\f15c"; }
+.flaticon-back-3:before { content: "\f15d"; }
+.flaticon-plumber-2:before { content: "\f15e"; }
+.flaticon-pipes:before { content: "\f15f"; }
+.flaticon-water-tap:before { content: "\f160"; }
+.flaticon-pipe-10:before { content: "\f161"; }
+.flaticon-pipe-11:before { content: "\f162"; }
+.flaticon-pipe-12:before { content: "\f163"; }
+.flaticon-pipe-13:before { content: "\f164"; }
+.flaticon-pipe-14:before { content: "\f165"; }
+.flaticon-pipe-15:before { content: "\f166"; }
+.flaticon-pipe-16:before { content: "\f167"; }
+.flaticon-pipe-17:before { content: "\f168"; }
+.flaticon-water-supply:before { content: "\f169"; }
+.flaticon-faucet-3:before { content: "\f16a"; }
+.flaticon-faucet-4:before { content: "\f16b"; }
+.flaticon-pipe-18:before { content: "\f16c"; }
+.flaticon-pipe-19:before { content: "\f16d"; }
+.flaticon-van:before { content: "\f16e"; }
+.flaticon-plunger-1:before { content: "\f16f"; }
+.flaticon-pipe-20:before { content: "\f170"; }
+.flaticon-plunger-2:before { content: "\f171"; }
+.flaticon-pipe-21:before { content: "\f172"; }
+.flaticon-leak-3:before { content: "\f173"; }
+.flaticon-pipe-22:before { content: "\f174"; }
+.flaticon-water:before { content: "\f175"; }
+.flaticon-pipe-23:before { content: "\f176"; }
+.flaticon-toilet-2:before { content: "\f177"; }
+.flaticon-silicone:before { content: "\f178"; }
+.flaticon-gauge:before { content: "\f179"; }
+.flaticon-hose:before { content: "\f17a"; }
+.flaticon-pipes-1:before { content: "\f17b"; }
+.flaticon-pipe-24:before { content: "\f17c"; }
+.flaticon-pipe-25:before { content: "\f17d"; }
+.flaticon-shower-1:before { content: "\f17e"; }
+.flaticon-saw:before { content: "\f17f"; }
+.flaticon-water-bottle:before { content: "\f180"; }
+.flaticon-sink-1:before { content: "\f181"; }
+.flaticon-wrench-1:before { content: "\f182"; }
+.flaticon-sink-2:before { content: "\f183"; }
+.flaticon-shower-2:before { content: "\f184"; }
+.flaticon-plumber-3:before { content: "\f185"; }
+.flaticon-tap:before { content: "\f186"; }

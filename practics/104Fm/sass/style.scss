@@ -1,0 +1,1194 @@
+@import "_mixins.scss";
+@import "_variables.scss";
+@import "animate.css";
+
+// Fonts
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,800);
+
+$scheme: nth($schemes,1);
+/*========================================================
+                      Main Styles
+=========================================================*/
+body {
+    color:map-get($scheme, secondary);
+    font: 14px/24px $primary-font;
+    -webkit-text-size-adjust: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 300;
+    font-family: $default-font;
+    color: map-get($scheme, secondary3);
+}
+
+h1 { 
+    line-height: 1;
+    letter-spacing: -2px;
+    font-size: 79px;
+    color: map-get($scheme, default);
+}
+
+h2 {
+	font-size: 150px;
+    line-height: 153px;
+        @media (max-width: 520px) {
+            font-size: 100px;
+            line-height: 1;
+        }
+}
+
+h3 {
+	font-size: 75px;
+    line-height: 1;
+}
+
+h4 {
+	font-size: 40px;
+    color: map-get($scheme, default);
+    line-height: 42px; 
+}
+
+h5 {
+	 font-size: 35px;
+}
+
+h6 {
+	font-size: 30px;
+}
+
+p, .marked-list, .list{
+	a:hover{
+        text-decoration: underline;
+    }
+
+    .fa{
+    	text-decoration: none;
+    }
+}
+
+time {
+   display: block;
+}
+
+a {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    &:focus{
+        outline: none;
+    }
+
+    &:active{
+        background-color: transparent;
+    }
+
+    @include transition(.3s);
+}
+
+a[href^="tel:"],
+a[href^="callto:"] {
+    color: inherit;
+    text-decoration: none;
+}
+
+strong {
+    font-weight: 700;
+}
+
+blockquote {
+    position: relative;
+
+
+    p {
+        margin-top: -3px;
+        line-height: 24px;
+    }
+    q {
+        font-style: italic;
+        position: relative;
+        overflow: visible;
+        color: map-get($scheme, primary2);
+    }
+
+    cite { 
+        display: block;
+        font-weight: bold;
+        font-size: 18px;
+        font-family: $default-font;
+        color: map-get($scheme, secondary);
+    }
+    
+     @media screen and (max-width: 992px) {
+
+            text-align: center;
+        }
+}
+
+address {
+    color: map-get($scheme, secondary8);
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: $default-font;
+    line-height: 14px; 
+}
+
+.fa{
+	line-height: inherit;
+}
+
+[class*='fa-']{
+    &:before{
+        font-weight: 400;
+    	font-family: $fa;
+    }     
+}
+
+.page {
+    overflow: hidden;
+    min-height: 500px;
+
+    .lt-ie9 & {
+        min-width: 1200px;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+ @media (max-width: 992px) {
+    .resp-center { text-align: center; }
+}
+
+ @media (max-width: 992px) {
+    .resp-margin { margin-top: 20px; }
+}
+
+.circle {
+    @include border-radius(30px);
+    overflow: hidden;
+}
+
+
+.color {
+    color:map-get($scheme, primary);
+}
+
+.text-1 {
+    margin-top: 17px;
+    font-weight: 300;
+    font-family: $default-font;
+    font-size: 30px;
+    color: map-get($scheme, secondary3);
+    padding: 0 0 0 13px;
+    line-height: 40px;
+}
+
+.text-2 {
+    font-weight: 300;
+    font-family: $default-font;
+    font-size: 25px;
+    color: map-get($scheme, primary);
+}
+
+/*=======================================================
+                       Main Layout
+=========================================================*/
+
+* + h1 { margin-top: 30px; }
+* + h3 { margin-top: 30px; }
+* + h4 { margin-top: 30px; }
+* + h5 { margin-top: 25px; }
+* + h6 { margin-top: 33px; }
+* + p { margin-top: 20px; }
+* + dl { margin-top: 46px; }
+* + hr { margin-top: 25px; }
+* + table { margin-top: 45px; }
+* + cite { margin-top: 9px; }
+* + .btn { margin-top: 32px; }
+* + .btn.mode_1 { margin-top: 25px; }
+* + .map { margin-top: 51px; }
+* + .contact-form { margin-top: 50px; }
+* + .subtitle { margin-top: 14px; }
+* + .offset1 { margin-top: 9px; }
+* + .offset3 { margin-top: 20px; }
+* + .offset2 { margin-top: 37px; }
+* + .offset4 { margin-top: 96px; }
+* + .offset5 { margin-top: 27px; }
+* + .offset5 { margin-top: 27px; }
+* + .offset6 { margin-top: 35px; }
+* + .btn-mode1 {margin-top: 53px;}
+* + .btn-mode2 {margin-top: 53px;}
+h1 + p { margin-top: 35px; }
+
+h2 + * { margin-top: 40px; }
+h2 + p { margin-top: 39px; }
+h2 + .row { margin-top: 49px; }
+h2 + .owl-carousel { margin-top: 53px; }
+h2 + .owl-carousel-03 { margin-top: 63px; }
+h2 + .contact-form { margin-top: 51px; }
+h2 + .resp-tabs { margin-top: 51px !important; }
+h2 + .img { margin-top: 50px; }
+h2 + .accordion { margin-top: 52px; }
+
+h3 + p { margin-top: 20px; }
+h3 + ul { margin-top: 20px; }
+h3 + .row { margin-top: 106px; }
+h3 + .offset4 { margin-top: 96px; }
+h4 + p { margin-top: 10px; }
+
+h6 + p { margin-top: 23px; }
+
+.offset1 { margin-top: 9px; }
+.offset2 { margin-top: 37px; }
+
+.subtitle + .row { margin-top: 48px; }
+
+* + time { margin-top: 10px; }
+h5 + time { margin-top: 5px; }
+h5 + p { margin-top: 4px; }
+time + p { margin-top: 8px; }
+time + h4 { margin-top: 10px; }
+
+dl + a { margin-top: 28px; }
+
+address + dl { margin-top: 10px; }
+
+hr + * { margin-top: 25px; }
+
+.icon + * { margin-top: 31px; }
+
+.row + .row { margin-top: 40px; }
+
+.row + .btn-wr { margin-top: 35px; }
+
+.img + * { margin-top: 25px; }
+
+.img + h5 { margin-top: 50px; }
+
+.img + h3 { margin-top: 35px; }
+
+.img + .row { margin-top: 38px; }
+
+p + .row { margin-top: 34px; }
+
+.row + .offset4 { margin-top: 60px; }
+
+.row + .offset6 { margin-top: 35px; }
+
+blockquote + p { margin-top: 9px; }
+
+cite + p { margin-top: 9px; }
+
+.img + p { margin-top: 25px; }
+
+p + p {margin-top: 15px;}
+
+/*=======================================================
+                        Components
+=========================================================*/
+
+/*==================     Brand     ======================*/
+.brand {
+    text-align: right;
+    display: inline-block;
+
+    .brand_name {
+
+            span {
+                color:map-get($scheme, secondary2);
+            }
+        }
+        .brand_slogan {
+            font-family: $default-font;
+            margin: -3px 0 0 0; 
+            font-size: 14px;
+            text-transform: uppercase;
+            color:map-get($scheme, secondary1);
+        }
+}
+
+/*==================  image  ======================*/
+.img {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    @include transition(.3s);
+
+    @media only screen and (max-width: 768px) {
+
+         &__resp_fullwidth {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+         }
+
+        &__resp_center {
+           text-align: center;
+           width: 100%;
+        }
+    }
+}
+/*==================  contact-list ======================*/
+
+.contact-list {
+
+       @include clearfix();
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: normal;
+        font-family: $default-font;
+        color: map-get($scheme,secondary8);
+    dt {
+        float: left;
+       }
+
+    dd {
+        float: right;
+        
+
+        a {
+            font-style: normal;
+        }
+    }
+
+    dt,dd {line-height: 21px;}
+
+    dt + dd {
+        margin: 0;
+    }
+    dd + dt {
+        clear: both;
+        margin-top: 0;
+    }
+    .email a:hover {
+        text-decoration: underline;
+    }
+ 
+}
+/*==================  marked list  ======================*/
+
+.marked-list {
+
+    li {
+        text-align: left;
+        text-transform: uppercase;
+        position: relative;
+        padding-left: 19px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 36px;
+        font-family: $default-font;
+        color:map-get($scheme, primary);
+
+        &:before {
+            content:'';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            display:inline-block;
+            width: 8px;
+            height: 8px;
+            background: map-get($scheme, default);
+            color: map-get($scheme, default);
+            @include border-radius(50%); 
+        }
+
+            a:hover {
+                text-decoration: none;
+                color: map-get($scheme, secondary3);
+            }
+       
+    }
+    li + li {
+        margin-top: 8px;
+    }
+
+
+        @media screen and (max-width: 992px) {
+               margin: 25px auto 0;
+        }
+
+
+}
+
+.marked-list-2 {
+        margin-top: -8px;
+    li {
+
+        &:before {
+           background: map-get($scheme, secondary3); 
+        }
+    }
+
+    li + li {
+        margin-top: 6px;
+    }
+}
+
+// *==================   Term List   ======================*/
+
+.term-list {
+    margin-top: 102px;
+    line-height: 24px;
+
+    dt {
+        font-weight: 300;
+        font-family: $default-font;
+        font-size: 20px;
+        line-height: 1; 
+        text-transform: uppercase;
+        color: map-get($scheme, primary);
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    dd {
+        .link {
+            margin-top: 26px;
+            text-transform: uppercase;
+            display: block;
+            color: map-get($scheme, primary);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        } 
+    }
+
+    dt + dd{margin-top: 27px;}
+
+    dd + dd {margin-top: 23px;}
+
+    dd + dt{margin-top: 37px;}
+
+    @media screen and (max-width: 992px) {
+
+        text-align: center;
+    }  
+    
+}
+
+/*==================  Backgrounds  ======================*/
+.bg-primary {
+    background-color: map-get($scheme, primary);
+    h1, h2, h3, h4, h5, h6 {
+        color: map-get($scheme, default);
+    }
+}
+.bg-secondary {
+    background-color: map-get($scheme,secondary5);
+}
+.bg-secondary1 {
+    background-color: map-get($scheme,secondary3);
+
+    h1, h2, h3, h4, h5, h6 {
+        color: map-get($scheme, default);
+    }
+}
+.bg-secondary2 {
+    background-color: map-get($scheme,secondary9);
+}
+.bg-primary1 {
+    background-image:url("../images/background.png");
+}
+.bg-primary2 {
+    background-image:url("../images/back2.png");
+}
+
+
+/*==================     Icons     ======================*/
+.fa-facebook,
+.fa-twitter,
+.fa-google-plus,
+.fa-linkedin{
+ 
+}
+.socials {
+        @include clearfix();
+
+            margin-top: -18px;
+        .active a {
+            background: map-get($scheme, primary);
+        }
+
+        li + li {
+            margin-left: 20px;
+        }
+
+        li {
+
+            float: left;
+
+             @media screen and (max-width: 992px) {
+                    float: none;
+                    display: inline-block;
+                }
+        }
+
+        a {
+             position: relative;
+             display: inline-block;
+             width: 77px;
+             height: 77px;
+             line-height:77px;
+             font-size: 25px;
+             text-align: center;
+             color: map-get($scheme, default);
+             background: map-get($scheme, secondary);
+             @include border-radius(50%);
+
+             &:hover {
+                background: map-get($scheme, primary);
+             }
+             &:active {
+                background:darken(map-get($scheme, primary), 10%);
+             }
+
+
+        }
+
+         @media screen and (max-width: 992px) {
+            margin-top: 70px;
+            float:none; 
+            text-align: center;
+        
+            }
+
+}
+
+/*==================    Buttons    ======================*/
+.btn {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 1;
+    font-family: $default-font;
+    padding: 42px 34px;
+    margin: 30px 16px 0 0;
+    color: map-get($scheme, default);
+    background: map-get($scheme, secondary3);
+    z-index: 2;
+    text-align:left; 
+    @include box-sizing(border-box);
+    @include transition(0.4s all ease);
+    @include border-radius(25px);
+
+    span {
+        display: block;
+        text-indent: 170px;
+    }
+    
+    &:before {
+      content: "\f011";
+      display: block;
+      width: 168px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: calc(100% - 166px);
+      bottom: 0;
+      background:map-get($scheme, primary);
+      font-family: $fa;
+      font-size: 100px;
+      line-height: 168px;
+      text-align: center;
+      @include border-radius(25px);
+      @include transition(0.3s all ease);
+    }
+    
+      &:hover:before {
+        left: auto;
+        right: 0;
+      }
+}
+
+.btn-mode1 {
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 116px;
+    height: 116px;
+    line-height: 116px;
+    background: map-get($scheme, primary);
+    @include border-radius(30px);
+
+    &:before {
+        content:"\f0f6"; 
+        font-family: $fa;
+        color: map-get($scheme, default);
+        font-size: 30px;
+    }
+    &:hover {
+        background: map-get($scheme, secondary3);
+    }
+
+    &:active{
+        background: darken(map-get($scheme, secondary3), 10%);
+    }
+
+     @media (max-width: 992px) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.btn-mode2 {
+    color: map-get($scheme, default);
+    background: map-get($scheme, primary);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+    font-family: $default-font;
+    text-align: center;
+    display: block;
+    width: 170px;
+    padding: 33px 0;
+    @include border-radius(30px);
+
+    &:hover {
+        background: map-get($scheme, secondary3);
+    }
+
+    &:active{
+        background: darken(map-get($scheme, secondary3), 10%);
+    }
+
+     @media (max-width: 992px) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.btn-mode3 {
+    text-indent: 41px;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    font-family: $default-font;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    padding: 47px 0;
+    width: 100%;
+    color: map-get($scheme, default);
+    background: map-get($scheme, secondary3);
+    text-transform: uppercase;
+    @include border-radius(30px);
+
+    &:before {
+        content:"\f0f6"; 
+        font-family: $fa;
+        color: map-get($scheme, default);
+        font-size: 30px;
+        display: block;
+        float: left;
+        font-weight: normal;
+    }
+
+    &:hover {
+        background: darken(map-get($scheme, secondary3), 10%);
+    }
+
+    &:active{
+        background: darken(map-get($scheme, primary), 10%);
+    }
+}
+/*==================      Box      ======================*/
+.box {
+    @include clearfix();
+
+    &_aside{
+        float: left;
+    }
+
+    &_cnt{
+
+    }
+
+    &_cnt__no-flow{
+        overflow: hidden;
+    }
+}
+
+.box1 {
+
+    display: table;
+
+    .box1_cnt {
+        display: table-cell;
+        width: 65%;
+        overflow: hidden;
+    }
+
+    .box1_aside {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: right;
+    }
+
+     @media (max-width: 992px) {
+        .box1_cnt, .box1_aside{
+            display: block;
+            width: 100%;
+        }
+        .box1_aside {
+            text-align: inherit;
+        }
+    }
+}
+
+.box2 {
+
+        @include clearfix();
+        
+     .box2_cnt {
+            padding: 77px 0 0 0;
+            color: map-get($scheme, default);
+            position: relative;
+            min-height: 371px;
+            @include box-sizing(border-box);
+            @include border-radius(30px);
+
+        .inner-block {
+            margin: 0 auto; 
+            display: table;
+        
+            span {
+                vertical-align: middle;
+                display: table-cell;
+                font-size: 68px;
+            }
+
+            h4 {
+                display: table-cell;
+                padding: 0 0 0 25px;
+            }
+        }
+    }
+
+    div:nth-child(1) div {
+        background:map-get($scheme, primary);
+    }
+
+    div:nth-child(2) div {
+        background:#eee05b;
+    }
+
+    div:nth-child(3) div {
+        background:#00bff3;
+    }
+
+    div:nth-child(4) div {
+        background:#f54f29;
+    }
+
+    div:nth-child(5) div {
+        background:#ff974f;
+    }
+
+    div:nth-child(6) div {
+        background:#9ea8b2;
+    }
+
+    div:nth-child(n + 4) div {
+        margin-top: 33px;
+    }
+    div:nth-child(n + 1) div {
+      background-image: url("../images/back2.png");
+      background-position: 0 0;
+    }
+
+        @media (max-width: 991px)  {
+
+           div:nth-child(n + 3) div {
+            margin-top: 33px;
+        }
+
+    }
+        @media (max-width: 768px)  {
+
+           div:nth-child(n + 2) div {
+            margin-top: 33px;
+        }
+
+    }
+}
+
+.box3 {
+    @include clearfix();
+
+    .box3_aside {
+        float: left;
+        width: 15%;
+        margin: 8px 21px 0 15px;
+
+        @media (max-width: 1200px)  {
+          float: none;
+          width: 100%;
+           margin: 0;
+        }
+    }
+
+    .box3_cnt {
+
+        span {
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 20px;
+            font-family: $default-font;
+            color: map-get($scheme, primary);
+
+            @media (max-width: 1200px)  {
+                display: block;
+                margin-top: 35px;
+            }
+
+        }
+
+        span + p {
+            margin-top: 25px;
+        }
+    }
+
+    @media (max-width: 1200px)  {
+        text-align: center;
+    }
+
+}
+
+
+.box4 {
+
+    display: table;
+
+    .box4_aside {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: left;
+
+        span {
+            display: block;
+            font-size: 313px;
+            // line-height: 1;
+            color: map-get($scheme, default);
+        }
+    }
+    .box4_cnt {
+        display: table-cell;
+        width: 66%;
+        overflow: hidden;
+        
+        * + p {
+            margin-top: 35px;
+        }
+
+        p {
+            line-height: 39px;
+            font-weight: 300;
+            font-size: 30px;
+            line-height: 39px;
+            font-family: $default-font;
+            color: map-get($scheme, secondary7);
+        }
+    }
+
+    .box4_aside,
+    .box4_cnt {
+         @media (max-width: 991px)  {
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+    }
+}
+.box5 {
+
+     display: table;
+
+    .box5_aside {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: left;
+        
+        span {
+            display: block;
+            font-size: 113px;
+            line-height: 1;
+            color: map-get($scheme, secondary3);
+        }
+
+        @media (max-width: 1200px)  {
+           display: block;
+           width: 100%;
+           text-align: inherit;
+        }
+    }
+    .box5_cnt {
+        display: table-cell;
+        width: 65%;
+        overflow: hidden;
+
+        h4 {
+            font-size: 50px;
+            line-height: 55px;
+        }
+
+        @media (max-width: 1200px)  {
+           display: block;
+           width: 100%;
+        }
+    }
+
+     @media (max-width: 1200px)  {
+            text-align: center;
+            display: block;
+        }
+}
+
+.box6 {
+     @include clearfix();
+
+     .box6_aside {
+        float: left;
+
+        span {
+            line-height: 1;
+            font-size: 50px;
+            color: map-get($scheme, primary);
+        }
+
+        @media (max-width: 991px) {
+            float: none;
+        }
+     }
+
+     .box6_cnt {
+          float: right; 
+          width: 80%;
+          span {
+            display: block;
+          }
+
+          @media (max-width: 991px) {
+            float: none;
+            width: 100%;
+            margin-top: 15px;
+        }
+         @media (max-width: 480px) {
+            width: 50%;
+            margin:20px auto 0;
+        }
+     }
+    @media (max-width: 991px) {
+        text-align: center;
+    }
+
+
+}
+.box7 {
+    span {
+        display: block;
+    }
+}
+.box8 {
+
+    & div > div:first-child  {
+        padding: 0;
+    }
+
+    & > div:nth-child(3),
+    & > div:nth-child(4) {
+        margin-top: 60px;
+    }
+
+    @media (max-width: 991px) {
+
+        & > div:nth-child(n + 2) {
+            margin-top: 30px;
+        }
+    }
+   
+    
+}
+
+//==================    Imports    ======================
+@import "_menu.scss";
+@import "_navbar.scss";
+@import "_stuck-menu.scss";
+@import "_to-top.scss";
+@import "_parallax.scss";
+@import "_jquery.fancybox.scss";
+
+/*========================================================
+                     HEADER  Section
+=========================================================*/
+header {
+    padding: 137px 0;
+    background:map-get($scheme, primary);
+
+    .brand {
+        float: left;
+    }
+
+    .nav {
+        margin: 38px 0 0;
+        float: right;
+    }
+
+    @media (max-width: 992px) {
+        text-align: center;
+
+        .brand, .nav{
+            float: none;
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 50px 0;
+    }
+}
+
+/*========================================================
+                     CONTENT  Section
+=========================================================*/
+main {
+    display: block;
+}
+.parallax {
+    color: map-get($scheme, secondary6);
+
+    h1,h2,h3,h4,h6 {
+        color: map-get($scheme, default);
+    }
+}
+
+/*==================      Well     ======================*/
+.well{
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    &__01 {
+        padding-top: 205px;
+        padding-bottom: 230px;
+    }
+    &__02 {
+        padding-top: 95px;
+        padding-bottom: 117px;
+    }
+    &__03 {
+        padding-top: 183px;
+        padding-bottom: 267px;
+    }
+    &__04 {
+        padding-top: 100px;
+        padding-bottom: 104px;
+    }
+    &__05 {
+        padding-top: 284px;
+        padding-bottom: 290px;
+    }
+    &__06 {
+        padding-top: 152px;
+        padding-bottom: 151px;
+    }
+    &__07 {
+        padding-top: 150px;
+        padding-bottom: 130px;
+    }
+    &__08 {
+        padding-top: 100px;
+        padding-bottom: 113px;
+    }
+    &__09 {
+        padding-top: 183px;
+        padding-bottom: 210px;
+    }
+    &__10 {
+       padding-top: 101px;
+       padding-bottom: 167px;
+    }
+    &__11 {
+        padding-top: 284px;
+        padding-bottom: 290px;
+    }
+    &__12 {
+       padding-top: 109px;
+       padding-bottom: 122px;
+    }
+    &__13 {
+       padding-top: 102px;
+       padding-bottom: 115px;
+    }
+    &__14 {
+       padding-top: 102px;
+       padding-bottom: 161px;
+    }
+    
+    @media (max-width: 767px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+/*========================================================
+                     FOOTER  Styles
+=========================================================*/
+footer {
+
+    padding: 57px 0 60px 0;
+    background: map-get($scheme, secondary10);
+
+    .brand {
+
+        float: left;
+
+    .brand_name {
+
+            span {
+                color:map-get($scheme, primary);
+            }
+        }
+        .brand_slogan {
+           color:map-get($scheme, secondary3);
+           text-align: right;
+        }
+    }
+    .copyright {
+        margin-top: 37px;
+        font-weight: 600;
+        font-family: $default-font;
+        float: right;
+
+        .color {
+            margin-right: 3px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @media (max-width: 767px) {
+        text-align: center;
+
+        .brand,.copyright {
+            float: none;
+        }
+    }
+
+}

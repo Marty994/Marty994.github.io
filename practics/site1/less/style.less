@@ -1,0 +1,809 @@
+﻿@import "_mixins.less";
+@import "_variables.less";
+@import "animate.css";
+
+// Fonts
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,800,600italic);
+
+/*========================================================
+                      Main Styles
+=========================================================*/
+body {
+    background: @footer-bg;
+    color: @default;
+    font: 400 15px/28px @default-font;
+    -webkit-text-size-adjust: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: @secondary-1;
+}
+
+h1{
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+h2{
+	font-size: 30px;
+    line-height: 1.2;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4.5px;
+}
+
+h3{
+	font-size: 26px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h4{
+	font-size: 21px;
+    line-height: 1.2;
+    font-weight: 700;    
+}
+
+h5{
+	font-size: 18px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h6{
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+}
+
+p{
+	a:hover{
+        text-decoration: underline;
+    }
+}
+
+time {
+    display: block;
+    color: @secondary;
+}
+
+a {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;  
+
+    &:focus{
+        outline: none;
+    }
+
+    &:hover {
+        color: @secondary;
+    }
+
+    .transition(.3s);
+}
+
+a[href^="tel:"],
+a[href^="callto:"] {
+    color: inherit;
+    text-decoration: none;
+}
+
+strong {
+    font-weight: 700;
+}
+
+blockquote {
+    font-style: italic;
+    position: relative;
+
+    q {
+        position: relative;
+        overflow: visible;
+        &:before {
+            content: "“";
+            position: absolute;
+            top: 4px;
+            left: -25px;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 28px;
+            font-style: normal;
+        }
+    }
+
+    cite { 
+        display: block;
+        font-weight: bold;
+        color: @secondary; 
+    }
+}
+
+dl {
+
+    dt {
+        font-weight: bold;
+        letter-spacing: 2.25px;
+    }
+
+    dl {
+
+    }
+}
+
+em {
+    color: @secondary; 
+}
+
+.page {
+    overflow: hidden;
+    min-height: 500px;
+
+    .lt-ie9 & {
+        min-width: 1200px;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.circle {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+[class*='fa-']{
+    &:before{
+        font-weight: 400;
+        font-family: @fa;
+    }     
+}
+
+
+/*=======================================================
+                       Main Layout
+=========================================================*/
+
+* + h1 { margin-top: 40px; }
+* + h2 { margin-top: 40px; }
+* + h3 { margin-top: 40px; }
+* + h4 { margin-top: 40px; }
+* + h5 { margin-top: 40px; }
+* + h6 { margin-top: 33px; }
+* + p { margin-top: 39px; }
+* + table { margin-top: 45px; }
+* + cite { margin-top: 9px; }
+* + .btn { margin-top: 18px; }
+* + .map { margin-top: 51px; }
+
+h2 + * { margin-top: 40px; }
+h2 + p { margin-top: 39px; }
+h2 + .row { margin-top: 40px; }
+h2 + .owl-carousel { margin-top: 53px; }
+h2 + .owl-carousel-03 { margin-top: 63px; }
+h2 + .contact-form { margin-top: 51px; }
+
+.offset1 { margin-top: 11px; }
+.offset2 { margin-top: 6px; }
+
+* + time { margin-top: 27px; }
+h6 + time { margin-top: 5px; }
+h6 + p { margin-top: 6px; }
+time + p { margin-top: 8px; }
+
+dd + dt { margin-top: 30px; }
+
+dl + a { margin-top: 28px; }
+
+.icon + * { margin-top: 31px; }
+
+.row +.row { margin-top: 34px; }
+
+blockquote + p { margin-top: 9px; }
+
+.img + p { margin-top: 25px; }
+
+.map + * { margin-top: 44px; }
+
+
+/*=======================================================
+                        Components
+=========================================================*/
+
+/*==================     Image     ======================*/
+
+.img {
+    display: inline-block;
+    max-width: 100%;
+
+    @media only screen and (max-width: 768px) {
+
+         &__resp_fullwidth {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+         }
+
+        &__resp_center {
+           text-align: center;
+           width: 100%;
+        }
+    }
+}
+
+/*==================     Table     ======================*/
+
+.table {
+    width: 100%;
+
+    td, th {
+        padding: 11px 0;
+        border: 1px solid #d2d2d2;
+        text-align: center;
+        line-height: 18px;
+        vertical-align: middle;
+    }
+
+    tr:first-child th, 
+    tr:first-child td {
+        width: 2%;
+    }
+
+    th {
+        font-weight: bold;
+        letter-spacing: 2.7px;
+        padding: 16px 0;
+    }
+}
+
+.inline-list {
+    .clearfix();
+    li {
+        float: left;
+    }
+}
+
+/*==================     Index List     ======================*/
+
+.index-list {
+    counter-reset: li; 
+    
+    li {
+        position: relative;
+        padding-left: 50px;
+        box-sizing: border-box;
+
+        &:before {
+            position: absolute;
+            top: 4px;
+            left: 0;
+            content: counter(li, decimal)"."; 
+            counter-increment: li; 
+            font-size: 30px;
+            letter-spacing: 4.5px;
+            font-weight: 800;
+        }
+    }
+
+    :nth-child(n + 4)  {
+        margin-top: 30px;
+    }
+}
+
+/*==================     Decorated      ======================*/
+
+.decorated-heading {
+    text-align: center;
+
+    &:after {
+        content: ". . .";
+        display: block;
+        letter-spacing: 2.3px;
+        color: #a9a8a8;
+    }
+}
+
+.decorated-block {
+    position: relative;
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+        width: 6px;
+        height: 6px;
+        background-color: #a9a8a8;
+        border-radius: 50%;
+    }
+}
+
+/*==================     Link Alt      ======================*/
+
+.link-alt { 
+    display: inline-block;
+    color: @secondary;
+}
+
+.link-alt:hover {
+    text-decoration: underline;
+}
+
+/*==================     Brand     ======================*/
+.brand {
+    display: inline-block;
+
+    &_name {
+        overflow: hidden;
+    }
+}
+
+/*==================     Icons     ======================*/
+.icon {
+    display: block;
+    font-size: 30px;
+}
+
+/*==================    Buttons    ======================*/
+.btn{
+    display: block;
+    font-weight: bold;
+    letter-spacing: 2.2px;
+    color: @secondary;
+
+    &:hover {
+        color: @default;
+    }
+}
+
+/*==================      Box      ======================*/
+.box {
+    .clearfix();
+
+    &_aside {
+        float: left;
+    }
+
+    &_cnt {
+
+    }
+
+    &_cnt__no-flow{
+        overflow: hidden;
+    }
+}
+
+.box1 {
+    padding: 38px 100px 41px;
+    text-align: center;
+    .background(fade(#222222, 60%));
+    box-sizing: border-box;
+
+    * + p { margin-top: 16px; }
+
+    time { color: @secondary !important; }
+
+    @media only screen and (max-width: 1199px) {
+        padding: 35px 80px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        padding: 30px 40px;
+    }
+}
+
+.box2 {
+    padding: 0 0 23px;
+
+    * + p {
+        margin-top: 5px;
+    }
+
+    p + p {
+        margin-top: 8px;
+    }
+}
+
+.box3 {
+    .icon {
+        position: absolute;
+        top: 25px;
+        left: 20px;
+        color: #a9a8a8;
+        & + * { margin-top: 0; }
+    }
+
+    &_content {
+        padding: 22px 0 0 98px;
+        position: relative;
+    }
+
+    time + p {
+        margin-top: 7px;
+    }
+
+    @media only screen and (max-width: 479px) {
+        .icon {
+            position: static;
+            & + * { margin-top: 20px; }
+        }
+
+        &_content {
+            padding-left: 0;
+        }
+    }
+}
+
+.box4 {
+    h2 + .row {
+        margin-top: 51px;
+    }
+}
+
+.box5 {
+    h2 + .row {
+        margin-top: 62px;
+    }
+
+    .row + .row {
+        margin-top: 30px;
+    }
+}
+
+.box6 {
+
+    letter-spacing: 2.25px;
+
+    .icon {
+        margin-right: 27px;
+        font-size: 66px;
+        line-height: 27px;
+        color: @secondary;
+        position: relative;
+
+        &.fa-mobile {
+            top: 6px;
+            font-size: 86px;
+        }
+
+        &.fa-map-marker {
+            top: 10px;
+            font-size: 79px;
+        }
+    }
+
+    .box {
+        &_cnt__no-flow {
+            font-weight: 600;
+        }
+    }
+
+    address { padding-right: 30px; }
+
+    @media only screen and (max-width: 1199px) {
+        text-align: center;
+
+        .box_aside {
+            float: none;
+        }
+
+        .icon {
+            top: 0;
+            margin-right: 0;
+            margin-bottom: 35px;
+        }
+
+        address { padding-right: 0; }
+    }
+}
+
+.box7 {
+    
+    .row + .row {
+        margin-top: 49px;
+    }
+
+    h2 + .row {
+        margin-top: 50px;
+    }
+}
+
+.box8 {
+    h2 + .row {
+        margin-top: 65px;
+    }
+}
+
+//==================    Imports    ======================
+@import "_menu.less";
+@import "_select-menu.less";
+@import "_stuck-menu.less";
+@import "_to-top.less";
+@import "_parallax.less";
+@import "_thumb.less";
+
+/*========================================================
+                     HEADER  Section
+=========================================================*/
+header {
+    background: @header-bg url(../images/header_bg.jpg) no-repeat;
+
+    .camera_container + .stuck_container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .brand{
+        float: left;
+
+        .brand_name {
+            padding: 25px 0;
+            font-size: 20px;
+            line-height: 23px;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: @primary;
+            background: url(../images/brand_img.png) no-repeat 0 50%;
+
+            a {
+                padding-left: 86px;
+                &:hover {
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+    .nav {
+        float: right;
+        padding-top: 22px;
+    }
+
+    @media (max-width: 979px) {
+        background-size: cover;
+        text-align: center;
+
+        .brand, .nav{
+            float: none;
+        }
+    }
+}
+
+/*========================================================
+                     CONTENT  Section
+=========================================================*/
+main {
+    display: block;
+    background: @content-bg;
+}
+
+/*==================      Well     ======================*/
+.well {
+    padding-top: 99px;
+    padding-bottom: 93px;
+
+    &__01 {
+        padding-top: 91px;
+        padding-bottom: 91px;
+    }
+
+    &__02 {
+        padding-top: 60px;
+        padding-bottom: 54px;
+    }
+
+    &__03 {
+        padding-top: 71px;
+        padding-bottom: 97px;
+    }
+
+    &__04 {
+        padding-top: 80px;
+        padding-bottom: 66px;
+    }
+
+    &__05 {
+        padding-top: 99px;
+        padding-bottom: 87px;
+    }
+
+    &__06 {
+        padding-top: 71px;
+        padding-bottom: 85px;
+    }
+
+    &__07 {
+        padding-top: 80px;
+        padding-bottom: 68px;
+    }
+
+    &__08 {
+        padding-top: 99px;
+        padding-bottom: 111px;
+    }
+
+    &__09 {
+        padding-top: 70px;
+        padding-bottom: 88px;
+    }
+
+    &__10 {
+        padding-top: 99px;
+        padding-bottom: 81px;
+    }
+
+    &__11 {
+        padding-top: 99px;
+        padding-bottom: 91px;
+    }
+
+    &__12 {
+        padding-top: 71px;
+        padding-bottom: 93px;
+    }
+
+    &__13 {
+        padding-top: 74px;
+        padding-bottom: 87px;
+    }
+
+     &__14 {
+        padding-top: 83px;
+        padding-bottom: 91px;
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+}
+
+.parallax {
+    color: @primary;
+
+    h1,h2,h3,h4,h5,h6 {
+        color: @primary;
+    }
+
+    .btn {
+        color: @primary;
+
+        &:hover {
+            color: @secondary;
+        }
+    }
+
+    time {
+        color: @primary;
+    }
+}
+
+blockquote {
+    
+    .box_aside {
+        img {
+            .border-radius(50%);
+        }
+    }
+
+    .box_cnt {
+        margin-left: 150px;
+        background-color: #f8f8f8;
+        padding: 29px 36px 23px 49px;
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 37px;
+            left: -22px;
+            display: block;
+            border: 10px solid transparent; 
+            border-right: 13px solid #f8f8f8; 
+        }
+    }
+
+    @media only screen and (max-width: 1199px) {
+        .box_aside + .box_cnt {
+            margin-top: 20px;
+        }
+        .box_aside {
+            float: none;
+            text-align: center;
+        }
+
+        .box_cnt {
+            margin-left: 0;
+
+            &:before {
+            content: "";
+            position: absolute;
+            top: -23px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            border: 10px solid transparent; 
+            border-bottom: 13px solid #f8f8f8; 
+        }
+        }
+    }
+}
+
+/*========================================================
+                     FOOTER  Styles
+=========================================================*/
+footer{
+    text-align: center;
+    padding: 63px 0 63px;
+
+    address {
+        display: inline-block;
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        padding: 6px 27px 13px;
+        color: @primary;
+        background-color: @secondary;
+
+        @media only screen and (max-width: 1199px) {
+            padding: 8px 20px;
+            font-size: 24px;
+        }
+        @media only screen and (max-width: 767px) {
+            font-size: 20px;
+        }
+        @media only screen and (max-width: 479px) {
+            font-size: 16px;
+        }
+    }
+
+    .socials {
+        display: inline-block;
+
+        li {
+            & + li { margin-left: 75px; }
+        }
+
+        a {
+            color: @primary;
+            &:hover {
+                color: @secondary;
+            }
+        }
+    }
+
+    .copyright {
+        font-weight: bold;
+        color: #888888;
+        letter-spacing: 3.7px;
+
+        a:hover {
+            color: @primary;
+        }
+    }
+}
+
+* + address {
+    margin-top: 47px;
+}
+
+* + .copyright {
+    margin-top: 50px;
+}

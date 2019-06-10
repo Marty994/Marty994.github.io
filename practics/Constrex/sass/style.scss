@@ -1,0 +1,1154 @@
+@import "_mixins.scss";
+@import "_variables.scss";
+@import "animate.css";
+
+// Fonts
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,800);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+
+
+$scheme: nth($schemes,1);
+
+/*========================================================
+                      Main Styles
+=========================================================*/
+body {
+    color:map-get($scheme, primary2);
+    font: 400 15px/24px $default-font;
+    letter-spacing: -0.03em;
+    -webkit-text-size-adjust: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-weight: 700;
+    font-family: $default-font;
+    letter-spacing: -0.03em;
+    color: map-get($scheme, secondary);
+}
+
+h1 { 
+    font-size: 38px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: map-get($scheme, secondary2) 
+}
+
+h4 {
+	 font-size: 24px; 
+     font-weight: 300;
+     color: #454444;
+     text-transform: uppercase;  
+}
+
+h5 {
+	font-size: 20px; 
+}
+
+h6 {
+	font-size: 18px;
+}
+
+p, .marked-list, .list{
+	a:hover{
+        text-decoration: underline;
+    }
+
+    .fa{
+    	text-decoration: none;
+    }
+}
+
+time {
+   display: block;
+}
+
+a {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    &:focus{
+        outline: none;
+    }
+    &:active{
+        background-color: transparent;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+    @include transition(.3s);
+}
+
+a[href^="tel:"],
+a[href^="callto:"] {
+    color: inherit;
+    text-decoration: none;
+}
+
+strong {
+    font-weight: 700;
+}
+
+blockquote {
+    position: relative;
+
+
+    p {
+        margin-top: -3px;
+        line-height: 24px;
+    }
+    q {
+        font-style: italic;
+        position: relative;
+        overflow: visible;
+        color: map-get($scheme, primary2);
+    }
+
+    cite { 
+        display: block;
+        font-weight: bold;
+        font-size: 18px;
+        font-family: $default-font;
+        color: map-get($scheme, secondary);
+    }
+    
+     @media screen and (max-width: 992px) {
+
+            text-align: center;
+        
+        }
+
+}
+address {
+    color: map-get($scheme, secondary);
+    font-size: 18px;
+    font-weight: 700;
+    line-height:22px; 
+}
+
+.fa{
+	line-height: inherit;
+}
+
+[class*='fa-']{
+    &:before{
+        font-weight: 400;
+    	font-family: $fa;
+    }     
+}
+
+.page {
+    overflow: hidden;
+    min-height: 500px;
+
+    .lt-ie9 & {
+        min-width: 1200px;
+    }
+}
+.center {
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .resp-center { text-align: center; }
+}
+@media (max-width: 992px) {
+    .resp-margin { margin-top: 15px; }
+}
+
+.circle {
+    @include border-radius(50%);
+    overflow: hidden;
+}
+.subtitle {
+    margin-top: 20px;
+}
+.decorated {
+    font-size: 62px;
+    font-weight: 400;
+    line-height: 67px;
+    letter-spacing: -0.014em;
+}
+    @media (max-width: 991px) {
+
+        .offset4 {
+           margin-top: 40px;
+        }
+    }
+
+
+/*=======================================================
+                       Main Layout
+=========================================================*/
+* + h1 { margin-top: 30px; }
+* + h2 { margin-top: 30px; }
+* + h3 { margin-top: 30px; }
+* + h4 { margin-top: 30px; }
+* + h5 { margin-top: 25px; }
+* + h6 { margin-top: 35px; }
+* + p { margin-top: 24px; }
+* + ul { margin-top: 20px; }
+* + dl { margin-top: 27px; }
+* + hr { margin-top: 25px; }
+* + table { margin-top: 45px; }
+* + cite { margin-top: 9px; }
+* + .btn { margin-top: 45px; }
+* + .btn_mode_1 {  margin-top: 25px;}
+* + address { margin-top: 28px;}
+* + .contact-form { margin-top: 50px; }
+* + .subtitle { margin-top: 17px; }
+* + .offset3 { margin-top: 13px; }
+* + .offset5 { margin-top: 27px; }
+* + .offset5 { margin-top: 27px; }
+* + .offset6 { margin-top: 35px; }
+h1 + p { margin-top: 35px; }
+h2 + * { margin-top: 37px; }
+h2 + p { margin-top: 39px; }
+h2 + .row { margin-top: 42px; }
+h2 + .owl-carousel { margin-top: 53px; }
+h2 + .owl-carousel-03 { margin-top: 63px; }
+h2 + .contact-form { margin-top: 51px; }
+h2 + .resp-tabs { margin-top: 51px !important; }
+h2 + .img { margin-top: 44px; }
+h2 + .accordion { margin-top: 52px; }
+h3 + p { margin-top: 15px; }
+h3 + ul { margin-top: 20px; }
+h3 + .row { margin-top: 30px; }
+h3 + * { margin-top: 15px; }
+h4 + p { margin-top: 13px; }
+h6 + p { margin-top: 7px; }
+.offset1 { margin-top: 6px; }
+.offset2 { margin-top: 12px; }
+* + time { margin-top: 10px; }
+h5 + time { margin-top: 5px; }
+h5 + p { margin-top: 4px; }
+time + p { margin-top: 8px; }
+time + h4 { margin-top: 10px; }
+ul + p { margin-top: 20px; }
+dd + dt { margin-top: 30px; }
+dl + a { margin-top: 28px; }
+address + dl { margin-top: 10px; }
+hr + * { margin-top: 25px; }
+.icon + * { margin-top: 31px; }
+.row + .row { margin-top: 48px; }
+.row + .offset3 { margin-top: 37px; }
+.row + .btn-wr { margin-top: 35px; }
+.img + * { margin-top: 32px; }
+.img + h5 { margin-top: 35px; }
+.img + h4 { margin-top: 25px; }
+.img + h3 { margin-top: 35px; }
+.img + .row { margin-top: 38px; }
+p + .row { margin-top: 30px; }
+.row + .offset6 { margin-top: 35px; }
+.row + .offset1 { margin-top: 22px; }
+blockquote + p { margin-top: 9px; }
+blockquote + blockquote {margin-top: 20px;}
+cite + p { margin-top: 9px; }
+.img + p { margin-top: 25px; }
+
+/*=======================================================
+                        Components
+=========================================================*/
+
+/*==================     Brand     ======================*/
+.brand {
+    height: 61px;
+    display: inline-block;
+    position: relative;
+    font-family: $default-font;
+    font-weight: 300;
+    padding:0 20px;
+    margin-left: 93px;
+
+    &:before {
+           content: "";
+           display: block;
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 27px;
+           height: 61px;
+           border-top: 1px solid map-get($scheme, default);
+           border-bottom: 1px solid map-get($scheme, default);
+           border-left: 1px solid map-get($scheme, default); 
+        }
+
+    &:after {
+           content: "";
+           display: block;
+           position: absolute;
+           top: 0;
+           right: 0;
+           width: 27px;
+           height: 61px;
+           border-top: 1px solid map-get($scheme, default);
+           border-bottom: 1px solid map-get($scheme, default);
+           border-right: 1px solid map-get($scheme, default); 
+        }
+
+    &_name {
+        letter-spacing: -0.03em;
+        line-height: 61px; 
+        font-weight: 300;
+        overflow: hidden;
+        text-transform: uppercase;
+        color: map-get($scheme, default);
+
+        span {
+            color: map-get($scheme, primary);
+        }
+    }
+
+}
+
+/*==================  image  ======================*/
+.img {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    @include transition(.3s);
+}
+
+/*==================  marked list  ======================*/
+
+.marked-list {
+
+    li {
+
+        position: relative;
+        padding-left: 25px;
+        line-height: 34px;
+        
+        &:before {
+            content:'\f138';
+            font-family: "FontAwesome";
+            font-size: 15px;
+            position: absolute;
+            left: 0;
+            top: 1px;
+            display:inline-block;
+            color: map-get($scheme, primary);
+
+        }
+
+        a:hover {
+            color: map-get($scheme, primary);
+            text-decoration: none;
+        }
+       
+    }
+
+
+        @media screen and (max-width: 992px) {
+               margin: 25px auto 0;
+                text-align: left;
+        }
+
+
+}
+/*==================     Index List     ======================*/
+
+.inline-list {
+    @include clearfix();
+
+    li {
+        float: left;
+    }
+}
+
+.index-list {
+    counter-reset: li;
+
+    li + li {
+        margin-top: 25px;
+    }
+
+    li {
+        position: relative;
+        padding-left: 82px;
+        box-sizing: border-box;
+
+        &:before {
+            position: absolute;
+            top: 4px;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 22px;
+            display: inline-block;
+            text-align: center;
+            content: counter(li, decimal) "";
+            counter-increment: li;
+            font-size: 24px;
+            line-height: 60px;
+            font-weight: bold;
+            color:map-get($scheme, default);
+            background:map-get($scheme, primary);
+            box-sizing: border-box;
+        }
+    }
+
+}
+.index-list2 {
+
+   li {
+        padding-left: 96px;
+
+        &:before {
+            left: 15px;
+        }
+    }
+
+    li + li {
+         margin-top: 0;
+
+        @media (max-width: 992px) {
+
+               margin-top:15px;
+        }
+    }
+
+    :nth-child(n + 4) {
+
+        margin-top: 35px;
+        
+        @media (max-width: 992px) {
+
+               margin-top:15px;
+        }
+
+    }
+}
+
+/*==================  contact-list ======================*/
+
+.contact-list {
+
+       @include clearfix();
+
+       margin: 10px 0 0 0;
+       line-height: 22px;
+
+    dt {
+        float: left;
+        font-size: 15px;
+        font-weight: normal;
+        color: $default-font;
+    }
+
+    dd {
+        float: right;
+        margin-right: 47px;
+
+        a {
+            font-style: normal;
+        }
+    }
+
+    & + dl {
+        clear: both;
+        dd, dt {
+          display: inline-block;
+          float: left;
+        }
+    }
+
+    dt + dd {
+        margin-top: 0;
+    }
+
+    dd + dt {
+        clear: both;
+        margin-top: 0;
+    }
+}
+
+.email {
+    margin-right: 57px;
+
+    dd {
+        // float: right;
+        margin: 0 0 0 5px;
+
+        a {
+            color: map-get($scheme, primary);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// *==================   Term List   ======================*/
+
+
+.term-list {
+    margin-top: 39px;
+    line-height: 24px;
+
+    dt {
+        font-family: $default-font;
+        font-weight: 700;
+        margin-top: 27px;
+        font-size: 18px;
+        letter-spacing: -0.03em;
+        line-height: 1; 
+        color: map-get($scheme, secondary);
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    dd {
+        margin-top: 9px;
+
+        .link {
+            display: block;
+            margin-top: 22px;
+            color: map-get($scheme, primary);
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        } 
+    }
+    dd + dd {
+        margin-top: 23px;
+    }
+     @media screen and (max-width: 992px) {
+
+        text-align: center;
+    }  
+    
+}
+
+/*==================  blockquote  ======================*/
+
+blockquote {
+    
+    .box_aside {
+        
+    }
+
+    .box_cnt {
+        color: map-get($scheme, default);
+        margin-left: 150px;
+        padding: 4px 10px 23px 49px;
+        position: relative;
+
+        p + cite {
+            margin-top: 15px;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .box_aside + .box_cnt {
+            margin-top: 20px;
+        }
+        .box_aside {
+            float: none;
+            text-align: center;
+        }
+
+        .box_cnt {
+            margin-left: 0;
+
+            @media (max-width: 991px) {
+                   padding: 0;
+            }
+        }
+    }
+}
+
+
+/*==================  Backgrounds  ======================*/
+.bg-primary {
+    background: map-get($scheme, primary);
+}
+.bg-secondary {
+    background: map-get($scheme, secondary4);
+}
+
+/*==================     Icons     ======================*/
+.fa-facebook,
+.fa-twitter,
+.fa-google-plus,
+.fa-linkedin{
+ 
+}
+.icon {
+    color: #454444;
+}
+.text-1 {
+    font-weight: 300;
+    color: #9d9394;
+}
+h2 + .text-2 {
+    margin-top: 13px;
+}
+.text-3 {
+    margin-top: 12px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 30px;
+    color: map-get($scheme, default);
+    word-spacing: 7px;
+    position: relative;
+    left: -10px;
+
+     @media screen and (max-width: 1200px) {
+        margin: 0;
+        left: 0;
+        text-align: center;
+    }
+  
+}
+
+//==================    Buttons    ======================
+.btn {
+    padding: 20px;
+    background:  map-get($scheme, primary);
+    color:  map-get($scheme, default);
+    white-space: nowrap;
+    font-size: 18px;
+    line-height: 1.2;
+    display: inline-block;
+    text-transform: uppercase;
+    width: 213px;
+    
+    &:hover {
+        background: darken(map-get($scheme, primary), 20%);
+    }
+
+    &:active {
+        background: darken(map-get($scheme, primary), 30%);
+    }
+}
+
+.btn_mode_1 {
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    color:  map-get($scheme, primary);
+    font-size: 15px;
+    padding-left: 20px;
+    max-width: 105px;
+
+    &:hover {
+         color: darken(map-get($scheme, primary), 20%);
+    }
+
+    &:active {
+         color: darken(map-get($scheme, primary), 10%);
+    }
+
+    &:before {
+        content: "\f178";
+        font-family:"FontAwesome";
+        position: absolute;
+        top: -1px;
+        left: 0;
+        display: block;
+        width: 15px;
+        height: 7px;
+    }
+}
+
+
+//==================      Box      ======================
+.box {
+    @include clearfix();
+
+    &_aside{
+        float: left;
+    }
+
+    &_cnt{
+
+    }
+
+    &_cnt__no-flow{
+        overflow: hidden;
+    }
+}
+
+.box1 {
+    @include clearfix();
+    padding-bottom: 25px;
+
+    &_aside {
+        margin-right: 6px;
+        width: 52px;
+        float: left;
+        
+    }
+    &_cnt{
+        margin-left: 15px;
+        overflow: hidden;
+        text-align: justify;
+    }
+
+}
+
+.box2 {
+    margin-top: 25px;
+    @include clearfix();
+
+    li {
+        display: inline-block;
+        float: left;
+        margin: 0 5px 5px 0;
+        border:1px solid #999;
+        @include transition(.3s);
+
+        a {
+            color: map-get($scheme, secondary3);
+            text-transform: uppercase;
+            font-size: 13px;
+            padding: 4px 7px;
+            display: block;
+        }
+
+         @media (max-width: 991px) {
+                  margin-top: 15px;  
+                
+            }
+
+        &:hover {
+            border-color:map-get($scheme, primary);
+            a {
+            color:map-get($scheme, default);
+            background:map-get($scheme, primary);
+            }
+        }
+
+    }
+}
+
+.box3 {
+    padding-bottom: 5px;
+
+    h2 {
+        font-size: 60px;
+        text-transform: uppercase;
+    }
+
+    * + p {margin: 17px auto;}
+
+    p {
+        width: 65%;
+        font-size: 14px;
+        font-family: "Times New Roman";
+    }
+}
+.box4 {
+
+    @include clearfix();
+
+    &_aside {
+        float: left;
+        font-size: 24px;
+        display: inline-block;
+        margin: 0 10px 0 0;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        color: map-get($scheme, default);
+        background: map-get($scheme, primary);
+
+            @media (max-width: 991px) {
+                    float: none;
+                
+            }
+
+    }
+
+    &_cnt   {
+        float: right;
+        width: 79%;
+
+
+            @media (max-width: 1200px) {
+                width: 75%;
+            
+            }
+
+            @media (max-width: 991px) {
+                margin-top: 15px;
+                float: none;
+                width: 100%;
+            }
+    }
+
+     @media (max-width: 991px) {
+            margin-top: 35px;
+        }
+
+}
+.counter {
+    position: relative;
+    transform: skew(-15deg); 
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: -20px;
+            display: block;
+            width: 46px;
+            height: 136px;
+            background:map-get($scheme, primary);
+            @include border-radius(5px);
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -20px;
+            display: block;
+            width: 46px;
+            height: 136px;
+            background: map-get($scheme, primary);
+            @include border-radius(5px);
+        }
+
+        &:before,
+        &:after {
+
+            @media (max-width: 991px) {
+              display: none;
+            }
+        }
+
+    .row > .box5:last-child:after {
+        content: none;
+    }
+
+     @media (max-width: 991px) {
+
+            transform: none;
+        }
+}
+
+.box5 {
+
+    position: relative;
+    padding: 26px 0 22px 0;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: map-get($scheme, default);
+    transform: skew(15deg);
+
+
+    span {
+
+        line-height: 44px;
+        font-size: 68px;
+        display: block;
+    }
+
+    span + span {
+
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    &:after {
+
+        content: "";
+        position: absolute;
+        top: 24px;
+        right: 30px;
+        display: block;
+        width: 1px;
+        height: 95px;
+        background: map-get($scheme, default);
+         -webkit-transform: rotate(15deg); 
+         transform: rotate(15deg);
+
+         @media (max-width: 991px) {
+
+            display: none;
+        }
+    }
+
+        @media (max-width: 991px) {
+
+            transform: none;
+        }
+
+}
+.box6 {
+
+    margin-top: -62px;
+    position: relative;
+
+        @media (max-width: 991px) {
+
+            margin: 0;
+        }
+
+}
+
+    
+//==================      Flickr    ======================*/
+
+.flickr_widget {
+    padding-top: 10px;
+    @include clearfix();
+
+}
+.flickr_cont {
+    float: left;
+    padding: 0 2px 2px 0;
+
+    a {
+        display: block;
+    }
+
+    &:hover {
+        @include opacity(.7);
+    }
+       @include transition(.3s);
+
+    @media (max-width: 991px) {
+        float: none;
+        display: inline-block;
+    }   
+}
+
+//==================    Socials      ======================
+.socials {
+       margin-top: 15px;
+       color: map-get($scheme, secondary3);
+
+    li {
+
+        a {
+            text-transform: uppercase;
+            line-height: 29px;
+
+            span {
+               margin-right: 9px;
+            }
+
+            &:hover {
+                color: map-get($scheme, primary);
+            }
+        }
+    }
+}
+
+//==================    Imports    ======================
+@import "_menu.scss";
+@import "_navbar.scss";
+@import "_stuck-menu.scss";
+@import "_to-top.scss";
+@import "_parallax.scss";
+@import "_tabs.scss";
+@import "_thumb";
+
+/*========================================================
+                     HEADER  Section
+=========================================================*/
+header {
+    @include clearfix();
+    position: relative;
+    background:transparent url('../images/header-bg.jpg') left top no-repeat;
+
+.brand {
+        float: left;
+
+         @media (max-width: 990px) {
+        
+            float: none;
+             margin: 0;      
+        }
+    }
+
+.nav {
+        text-align: center;
+        margin: 17px 74px 0px 0px;
+        float: right;
+
+         @media (max-width: 990px) {
+            float: none;
+            margin: 15px 0 0 0;
+                   
+        }
+    }
+
+    @media (max-width: 767px) {
+        text-align: center;
+
+        .brand, .nav{
+            float: none;
+        }
+    }
+}
+
+ .has-camera-slider header {
+    background: transparent;
+}
+
+/*========================================================
+                     CONTENT  Section
+=========================================================*/
+main {
+    display: block;
+}
+
+.parallax {
+
+    color: map-get($scheme, default);
+
+    h1,h2,h3,h4,h6 {
+        color: map-get($scheme, default);
+    }
+    p {
+        font-weight: 300;
+    }
+
+    & > * {
+        text-indent: justify;
+    }
+
+}
+
+/*==================      Well     ======================*/
+
+.well{
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    &__01  {
+        padding-top: 84px;
+        padding-bottom: 67px;
+    }
+    &__02  {
+        padding-top: 84px;
+        padding-bottom: 95px;
+    }
+    &__03  {
+        padding-top: 84px;
+        padding-bottom: 80px;
+    }
+    &__04  {
+        padding-top: 90px;
+        padding-bottom: 102px;
+    }
+    &__05  {
+        padding-top: 104px;
+        padding-bottom: 179px;
+    }
+    &__06 {
+        padding-top: 65px;
+        padding-bottom: 94px;
+    }
+    &__07  {
+        padding-top: 66px;
+        padding-bottom: 70px;
+    }
+    &__08  {
+        padding-top: 44px;
+        padding-bottom: 41px;
+    }
+    
+
+    @media (max-width: 767px) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+}
+
+/*========================================================
+                     FOOTER  Styles
+=========================================================*/
+footer {
+    @include clearfix();
+    font-size: 14px;
+    padding: 35px 0px; 
+    color: map-get($scheme, secondary3);
+
+    .brand2 {
+        float: left;
+        padding: 0;
+        margin-left: 0; 
+
+         > h1 {
+            color: inherit;
+
+            span {
+                color: map-get($scheme, primary);
+            }
+        }
+
+
+            @media (max-width: 767px) {
+                   float: none;
+                   width: 100%; 
+                }
+
+    }
+
+    .copyright {
+
+           float:left; 
+           margin-top: 28px;
+
+           a {
+            margin-left: 5px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+           } 
+
+
+            @media (max-width: 767px) {
+                   margin-top: 15px;
+                   float: none;
+                   width: 100%;
+                }  
+       } 
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

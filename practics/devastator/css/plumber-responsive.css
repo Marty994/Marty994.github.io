@@ -1,0 +1,168 @@
+/*CSS Document 
+
+Project Name:  Bootstrap 4 Fremwork HTML5 Template     
+Version:  1.0   
+Author Name: Set PVT.
+Support Email : shakil.shakil.ahsan@gmail.com
+Design By: Mahamudul Hasan
+Creation Date: 8 October 2018*/
+
+/*=================================================*/
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 1479px) {
+    /* Services Css */
+    .services-sec:after {
+        display: none;
+    }
+
+    /* Funfact Css */
+    .funfact-area .funfact-bg {
+        display: none;
+    } 
+
+}
+
+@media screen and (max-width: 1199px) {
+    /* welcome Css */
+    .plumber-feature-section {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Services Css */
+    .services-ariya .services-item.style-1 .thumb .icon-box::after {
+        height: 78px;
+        top: -78px;
+    }
+    .services-ariya .services-item.style-1 .thumb .icon-box {
+        top: 18%;
+    }
+
+    /* About Css */
+    .about-thumb:before {
+        height: 320px;  
+    }
+}
+
+@media screen and (max-width: 991px) {
+    /* Services Css */
+    .services-ariya .services-item.style-1 {
+        margin-bottom: 30px;
+    }
+    .services-sec .curve-sec {
+        display: none;
+    }
+    .services-sec .col-lg-4.grid-mt70 {
+        margin-top: 0;
+    }
+    /* Discount css */
+
+    .discount-ariya {
+        text-align: center;  
+    }
+    /* About */
+    .about-sec:before {
+        display: none;
+    }
+    .about-content {
+        margin-bottom: 50px;
+    }
+    .about-thumb:before {
+        display: none;
+    }
+    /* Services */
+    .services-ariya.style-2:before {
+        display: none;
+    }
+    .services-ariya.style-2 .ser-content {
+        padding: 48px 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media (min-width: 575px) and (max-width: 709px) {
+    /* Services Css */
+    .services-ariya .services-item.style-1 .thumb .icon-box {
+        left: 50%;
+        position: absolute;
+        top: 15px;
+        transform: translateX(-50%);
+    }
+    .services-ariya .services-item.style-1 .thumb .icon-box:after {
+        display: none;
+    }
+}
+
+@media (min-width: 575px) and (max-width: 624px) {
+    /* Services Css */
+    .services-ariya .services-item.style-1 .content {
+        padding: 18px 16px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    /*Header Tops*/
+    .contact-info {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    .header .header-tops {
+        height: auto;
+    }
+    .header .header-tops .contact-info ul {
+        border: none;
+    }
+    .header-tops .icon-style-1 {
+        display: inline-block;
+        left: 10%;
+        position: relative;
+        text-align: center;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+    .header-bottom {
+        top: 89px;
+    }
+    /* Counter Col */
+    .counter-col {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 64px 0;
+        text-align: center;
+    }
+    .counter-col h4:before {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+    /* Services Css */
+    .services-ariya.style-2 .ser-content {
+        padding-left: 0 !important;
+        text-align: center;
+    }
+    .plumber-feature-section .col-lg-4.pl-0{
+        padding-right:0;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    /* Discount Css */
+    .discount-ariya .content h1 {
+        font-size: 38px;
+    }
+}
+
+@media screen and (max-width: 379px) {
+}

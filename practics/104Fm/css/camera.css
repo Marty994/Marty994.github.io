@@ -1,0 +1,222 @@
+/*========================================================
+                        Camera
+=========================================================*/
+.camera_container {
+  position: relative;
+  padding-bottom: 20.5%; }
+
+@media (max-width: 1463.41463px) {
+  .camera_container {
+    padding-bottom: 300px; } }
+.camera_wrap {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin-bottom: 0 !important;
+  height: 100%;
+  background: #fff;
+  z-index: 0; }
+
+.camera_wrap img {
+  max-width: none !important; }
+
+.camera_fakehover {
+  height: 100%;
+  min-height: 60px;
+  position: relative;
+  width: 100%; }
+
+.camera_src {
+  display: none; }
+
+.cameraCont, .cameraContents {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 1; }
+
+.cameraContents {
+  width: 1170px;
+  margin: 0 auto; }
+  @media (max-width: 1199px) {
+    .cameraContents {
+      width: 940px; } }
+  @media (max-width: 992px) {
+    .cameraContents {
+      width: 720px; } }
+  @media (max-width: 768px) {
+    .cameraContents {
+      margin-right: auto;
+      margin-left: auto;
+      width: 100%; } }
+
+.cameraSlide {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+.cameraContent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none; }
+
+.camera_target {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  text-align: left;
+  z-index: 0; }
+
+.camera_overlayer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0; }
+
+.camera_target_content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 2; }
+
+.camera_loader {
+  background: #fff url(../images/camera-loader.gif) no-repeat center;
+  border: 1px solid #ffffff;
+  border-radius: 18px;
+  height: 36px;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  margin: -18px 0 0 -18px;
+  top: 50%;
+  width: 36px;
+  z-index: 3; }
+
+.camera_nav_cont {
+  height: 65px;
+  overflow: hidden;
+  position: absolute;
+  right: 9px;
+  top: 15px;
+  width: 120px;
+  z-index: 4; }
+
+.camerarelative {
+  overflow: hidden;
+  position: relative; }
+
+.imgFake {
+  cursor: pointer; }
+
+.camera_command_wrap .hideNav {
+  display: none; }
+
+.camera_command_wrap {
+  left: 0;
+  position: relative;
+  right: 0;
+  z-index: 4; }
+
+.showIt {
+  display: none; }
+
+.camera_clear {
+  clear: both;
+  display: block;
+  height: 1px;
+  margin: -1px 0 25px;
+  position: relative; }
+
+.camera_caption {
+  display: none; }
+
+.cameraContent .camera_caption {
+  display: block; }
+
+/*================   Custom Layout&Styles   =====================*/
+.camera_caption {
+  position: absolute;
+  z-index: 999;
+  top: 32%;
+  left: 0;
+  width: 75%; }
+  .camera_caption > div {
+    height: 100%; }
+    .camera_caption > div h3 {
+      color: #fff;
+      font-size: 70px;
+      line-height: 1; }
+      .camera_caption > div h3 span {
+        display: block; }
+        @media (max-width: 900px) {
+          .camera_caption > div h3 span {
+            display: inline; } }
+      @media (max-width: 707px) {
+        .camera_caption > div h3 {
+          font-size: 60px; } }
+      @media (max-width: 607px) {
+        .camera_caption > div h3 {
+          font-size: 50px; } }
+      @media (max-width: 507px) {
+        .camera_caption > div h3 {
+          font-size: 45px; } }
+  @media (max-width: 1200px) {
+    .camera_caption {
+      top: 18%; } }
+  @media (max-width: 900px) {
+    .camera_caption {
+      width: 100%;
+      text-align: center; } }
+
+.camera_pag {
+  position: absolute;
+  top: 46%;
+  right: -27%;
+  width: 100%;
+  height: auto; }
+  .camera_pag_ul {
+    text-align: center;
+    margin: 0 0 0 10px; }
+    .camera_pag_ul li {
+      display: inline-block;
+      width: 33px;
+      height: 33px;
+      text-align: center;
+      cursor: pointer;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background: transparent;
+      border: 5px solid #fff;
+      -moz-transition: 0.3s all ease;
+      -o-transition: 0.3s all ease;
+      -webkit-transition: 0.3s all ease;
+      transition: 0.3s all ease; }
+      .camera_pag_ul li.cameracurrent, .camera_pag_ul li:hover {
+        border-color: #2196F3; }
+      .camera_pag_ul li + li {
+        margin-left: 12px; }
+      .camera_pag_ul li > span {
+        display: none; }
+  @media (max-width: 900px) {
+    .camera_pag {
+      top: 77%;
+      right: 0%; } }
+
+/*# sourceMappingURL=camera.css.map */

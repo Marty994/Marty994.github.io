@@ -1,0 +1,381 @@
+/*========================================================
+                        Camera
+=========================================================*/
+@import "_mixins.scss";
+@import "_variables.scss";
+
+$minHeight: 300px;
+$ratio: 0.41637;
+
+.camera_container {
+  position: relative;
+  padding-bottom: ($ratio * 100%);
+}
+
+@media (max-width: ($minHeight / $ratio)) {
+  .camera_container {
+    padding-bottom: $minHeight;
+  }
+}
+
+@mixin camera-abs() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.camera_wrap {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin-bottom: 0 !important;
+  height: 100%;
+  background: #fff;
+  z-index: 0;
+}
+
+.camera_wrap img {
+  max-width: none !important;
+}
+
+.camera_fakehover {
+  height: 100%;
+  min-height: 60px;
+  position: relative;
+  width: 100%;
+}
+
+.camera_src {
+  display: none;
+}
+
+.cameraCont, .cameraContents {
+  height: 100%;
+  position: relative;
+  width: 1170px;
+  display: inline-block;
+  z-index: 1;
+
+  @media (max-width: 1199px) {
+     width: 940px;
+  }
+  @media (max-width: 979px) {
+     width: 748px;
+  }
+  @media (max-width: 767px) {
+     width: 420px;
+     padding: 0;
+  }
+  @media (max-width: 479px) {
+     width: 300px;
+  }    
+}
+
+.cameraSlide {
+  @include camera-abs();
+}
+
+.cameraContent {
+  @include camera-abs();
+  display: none;
+}
+
+.camera_target {
+  @include camera-abs();
+  overflow: hidden;
+  text-align: left;
+  z-index: 0;
+}
+
+.camera_overlayer {
+  @include camera-abs();
+  overflow: hidden;
+  z-index: 0;
+}
+
+.camera_target_content {
+  @include camera-abs();
+  overflow: hidden;
+  text-align: center;
+  z-index: 2;
+}
+
+.camera_loader {
+  background: #fff url(../images/camera-loader.gif) no-repeat center;
+  border: 1px solid #ffffff;
+  border-radius: 18px;
+  height: 36px;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  margin: -18px 0 0 -18px;
+  top: 50%;
+  width: 36px;
+  z-index: 3;
+}
+
+.camera_nav_cont {
+  height: 65px;
+  overflow: hidden;
+  position: absolute;
+  right: 9px;
+  top: 15px;
+  width: 120px;
+  z-index: 4;
+}
+
+.camerarelative {
+  overflow: hidden;
+  position: relative;
+}
+
+.imgFake {
+  cursor: pointer;
+}
+
+.camera_command_wrap .hideNav {
+  display: none;
+}
+
+.camera_command_wrap {
+  left: 0;
+  position: relative;
+  right: 0;
+  z-index: 4;
+}
+
+.showIt {
+  display: none;
+}
+
+.camera_clear {
+  clear: both;
+  display: block;
+  height: 1px;
+  margin: -1px 0 25px;
+  position: relative;
+}
+
+.camera_caption {
+  display: none;
+}
+
+.cameraContent .camera_caption {
+  display: block;
+}
+
+/*================   Custom Layout&Styles   =====================*/
+.camera_caption {
+  position: absolute;
+  right: 0;
+  bottom: 20.5%;
+  width: 60%;
+
+  > div {
+    height: 100%;
+    color: $content-bg;
+    text-align: right;
+
+    h2 {
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: 6.6px;
+      color: $content-bg;
+
+      @media (max-width: 1600px) {
+        font-size: 30px;
+        letter-spacing: 4px;
+      }
+      @media (max-width: 979px) {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+    }
+
+    h2 + p {
+      margin-top: 15px;
+
+      @media (max-width: 979px) {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  @media (max-width: 1199px) {
+    bottom: 5%;
+  }
+  @media (max-width: 479px) {
+    width: 65%;
+  }
+}
+
+.camera_thumbs {
+  text-align: center;
+
+  .camera_command_wrap {
+    width: 1170px;
+    display: inline-block;
+
+    .camera_thumbs_cont {
+      position: absolute;
+      right: 0;
+      margin-top: 12%;
+      text-align: right;
+
+      ul {
+        width: auto !important;
+
+        li.pix_thumb {
+          width: 70px;
+          height: 70px;
+          border: 5px solid;
+          border-color: rgba(255,255,255, .2);
+          box-sizing: border-box;
+          cursor: pointer;
+          @include transition(.3s);
+
+          &:hover,
+          &.cameracurrent {
+             border-color: rgba(255,255,255, .8);
+          } 
+
+          .camera_thumb {
+            opacity: 1 !important;
+          }
+
+          @media (max-width: 1199px) {
+             width: 50px;
+             height: 50px;
+             border-width: 4px;
+
+             .camera_thumb {
+              max-width: 100% !important;
+              height: auto;
+             }
+          }
+          @media (max-width: 979px) {
+             width: 40px;
+             height: 40px;
+             border-width: 3px;
+          }
+
+          @media (max-width: 767px) {
+             width: 30px;
+             height: 30px;
+             border-width: 2px;
+             display: inline-block;
+             margin: 20px 5px 0 0;
+             top: 20px;
+          }
+        }
+
+        li + li {
+          margin-top: 10px;
+
+          @media (max-width: 1600px) {
+            margin-top: 5px;
+          }
+        }
+      }
+      @media (max-width: 1600px) {
+        margin-top: 5%;
+      }
+    }
+
+    @media (max-width: 1199px) {
+       width: 940px;
+    }
+    @media (max-width: 979px) {
+       width: 748px;
+    }
+    @media (max-width: 767px) {
+       width: 420px;
+       padding: 0;
+    }
+    @media (max-width: 479px) {
+       width: 300px;
+    }    
+  }
+}
+.camera_pag {
+  position: absolute;
+  bottom: 1%;
+  z-index: 9999;
+  width: 100%;
+
+  &_ul {
+    text-align: center;
+
+    li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      line-height: 10px;
+      text-align: center;
+      cursor: pointer;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background: #888;
+      @include transition(.3s all ease);
+
+      &.cameracurrent, &:hover {
+        background: #333;
+      }
+
+      & + li {       
+      	margin-left: 6px;  
+      }
+
+      > span {
+        display: none;
+      }
+    }
+  }
+}
+
+.camera_prev,
+.camera_next {
+  position: absolute;
+  z-index: 9999;
+  bottom: 2%;
+  left: 50%;
+  margin-left: -30px;
+  display: block;
+  font-size: 42px;
+  line-height: 1.2;
+  font-family: "FontAwesome";
+  color: $content-bg;
+  cursor: pointer;
+  @include transition(.3s);
+
+  &:before {
+    content: "\f104";
+  }
+
+  &:hover {
+   color: $secondary;
+  }
+
+  @media only screen and (max-width: 767px) {
+    bottom: 1%;
+  }
+}
+
+.camera_next {
+  right: 50%;
+  left: auto;
+  margin-right: -30px;
+  margin-left: auto;
+
+  &:before {
+    content: "\f105";
+  }
+}
+
+
+

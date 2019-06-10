@@ -1,0 +1,73 @@
+/*=================       Tabs     ======================*/
+.resp-tabs-list {
+
+  li {
+
+    padding: 13px 22px; 
+    font-size: 24px;
+    color: map-get($scheme, secondary);
+    display: inline-block;
+    cursor: pointer;
+
+    &:hover {
+      outline: 1px solid  #efb814;
+    }
+    @media (max-width: 992px) {
+      margin-top:15px;
+    }
+
+  }
+
+  li + li {
+    margin-right: -1px;
+  }
+
+}
+.resp-tab-active {
+  outline: 1px solid  #efb814;
+}
+.resp-accordion {
+  display: none;
+
+  @media (max-width: 768px) {
+      margin-top:15px;
+      padding: 13px 22px; 
+      font-size: 24px;
+      color: map-get($scheme, secondary);
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    &:hover {
+      outline: 1px solid  #efb814;
+    }
+}
+
+* + .resp-tab-content  {
+  margin-top: 50px;
+}
+
+.resp-tab-content {
+  display: none;
+
+   & > div:nth-child(n + 4) {
+
+        margin-top: 43px;
+    }
+
+}
+.resp-tab-content-active {
+
+  display: block;
+
+}
+
+@media (max-width: 767px) {
+  .resp-accordion {
+    display: block;
+  }
+
+  .resp-tabs-list {
+    display: none;
+  }
+}

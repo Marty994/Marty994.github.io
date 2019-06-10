@@ -1,0 +1,148 @@
+
+@import "_mixins.scss";
+@import "_variables.scss";
+
+$scheme: nth($schemes,1);
+/*==================     Subscribe Form     ======================*/
+$form-height: 63px;
+$form-border: none;
+$form-color: #454545;
+$form-bg: #ffffff;
+
+$email-width: 404px;
+$name-width: $email-width;
+
+
+//--------------------------------------------------------------
+//                      Subscribe Form
+//--------------------------------------------------------------
+.subscribe-form {
+  position: relative;
+  display: block;
+  left: 40px;
+
+  h2 {
+    float: left;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 30px;
+    color: map-get($scheme, default);
+  }
+
+  label {
+    display: inline-block;
+    position: relative;
+    padding: (($form-height - 22)/2) 10px (($form-height - 22)/2);
+    background: $form-bg;
+    border: $form-border;
+    @include box-sizing(border-box);
+  }
+
+  label.name {
+    width: $name-width;
+  }
+
+  label.email {
+    width: $email-width;
+    margin-right: 7px;
+
+
+    @media screen and (max-width: 991px) {
+        margin:0;
+        width: 100%;
+    }
+
+  }
+  
+
+  input {
+    @include reset-input();
+    color: $form-color;
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 22px;
+    height: 22px;
+  }
+  a[data-type="submit"] {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 20px 61px;
+    text-align: center;
+    background: map-get($scheme, secondary2);
+    color: map-get($scheme, default);
+
+    &:hover {
+      background:darken(map-get($scheme, secondary2), 20%);
+    }
+
+    @media screen and (max-width: 1200px) {
+          margin-top: 25px;
+    }
+
+  }
+
+   @media screen and (max-width: 1200px) {
+
+        text-align: center;
+    }
+
+    @media screen and (max-width: 991px) {
+
+        left: 0;
+        margin: 25px 0 0 0;
+    }
+}
+
+//--------------------------------------------------------------
+//                         Messages
+//--------------------------------------------------------------
+.subscribe-form {
+  .error, .success {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: -10px;
+    text-align: left;
+    padding: 4px 10px;
+    left: 5px;
+    right: 5px;
+    font-size: 10px;
+    line-height: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: map-get($scheme, secondary2);
+  }
+
+  .error {
+    display: none;
+    color: #f00;
+    overflow: hidden;
+    @include transition(.3s all ease);
+  }
+
+  label.invalid .error {
+    display: block;
+  }
+
+  .success {
+    display: none;
+    color: #0f0;
+  }
+}
+
+//--------------------------------------------------------------
+//                    Responsive Layout
+//--------------------------------------------------------------
+@media (max-width: 979px) {
+  .subscribe-form {
+    label.name,
+    label.email {
+      display: block;
+      width: 100%;
+    }
+  }
+}

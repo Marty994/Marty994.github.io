@@ -1,0 +1,451 @@
+@import "_mixins.scss";
+@import "_variables.scss";
+@import "animate.css";
+
+// Fonts
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,800);
+
+$scheme: nth($schemes,1);
+/*========================================================
+                      Main Styles
+=========================================================*/
+body {
+    background: map-get($scheme, default);
+    color: map-get($scheme, secondary);
+    font: 300 16px/30px $default-font;
+    -webkit-text-size-adjust: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    font-family: $default-font;
+}
+
+h1{
+    font-size: 50px;
+}
+
+h2{
+    font-size: 45px;
+    line-height: 70px;
+}
+
+h3{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+h4{
+    font-size: 20px;
+}
+
+h5{
+    font-size: 18px;
+}
+
+h6{
+    font-size: 16px;
+}
+
+p, .marked-list, .list{
+    a:hover{
+        text-decoration: underline;
+    }
+
+    .fa{
+        text-decoration: none;
+    }
+}
+
+time {
+   display: block;
+}
+
+a {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:active {
+        background-color: transparent;
+    }
+
+    @include transition(.3s);
+}
+
+a[href^="tel:"],
+a[href^="callto:"] {
+    color: inherit;
+    text-decoration: none;
+}
+
+strong {
+    font-weight: 700;
+}
+
+hr {
+    height: 6px;
+    display: block;
+    margin: 0 auto;
+    border:0px none;
+    background-color: #7f8487;
+}
+
+.fa{
+    line-height: inherit;
+}
+
+[class*='fa-'] {
+    &:before {
+        font-weight: 400;
+        font-family: $fa;
+    }
+}
+
+dl {
+    dt,
+    .link {
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: -.6px;
+        color: map-get($scheme, default);
+    }
+}
+
+.page {
+    overflow: hidden;
+    min-height: 500px;
+
+    .lt-ie9 & {
+        min-width: 1200px;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.rel {
+    position: relative;
+}
+
+.top-marg {
+    margin-top: 30px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.pad {
+  @media (max-width: 992px){
+         padding: 0;
+      }
+}
+
+/*=======================================================
+                       Main Layout
+=========================================================*/
+* + .offset1 {
+     @media (max-width: 767px) {
+         margin-top: 50px;
+      }
+    }
+* + .offset2 {
+     @media (max-width: 480px) {
+         margin-top: 50px;
+      }
+    }
+
+h2 + .row {margin-top: 55px;}
+
+.row + .row {margin-top: 35px;
+
+  @media (max-width: 767px) {
+         margin-top: 0;
+      }
+    }
+
+/*=======================================================
+                        Components
+=========================================================*/
+
+/*==================     Brand     ======================*/
+.brand {
+      position: absolute;
+      top: -9px;
+      left: 48px;
+
+    .logo {
+
+       @media (max-width: 767px) {
+        display: none;
+      }
+    }
+}
+
+/*==================  Backgrounds  ======================*/
+.bg-primary{
+    background: map-get($scheme, secondary1);
+}
+.parallax {
+    h1,h2,h3,h4,h5,h6 {
+        color:map-get($scheme, default);
+    }
+}
+
+/*==================     Icons     ======================*/
+.fa-facebook,
+.fa-twitter,
+.fa-google-plus,
+.fa-linkedin{
+}
+
+/*==================    Buttons    ======================*/
+.btn {
+    &:hover {
+        background: map-get($scheme, primary);
+    }
+
+    &:active {
+        background: darken(map-get($scheme, primary), 10%);
+    }
+}
+
+/*==================  Progress-bar   ======================*/
+
+.circle {
+    position: relative;
+    color: map-get($scheme, default);
+
+    canvas {
+      opacity:(0.7);
+    }
+
+    strong {
+        width: 100%;
+        position: absolute;
+        top: 64px;
+        left: 5px;
+        line-height: 40px;
+        font-size: 30px;
+    }
+
+    h3 {
+        margin-top: 25px;
+        text-transform: uppercase;
+    }
+}
+
+/*==================      Overlay    ======================*/
+
+.view {
+    width: 100%;
+    height: 225px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    @include box-shadow(1px 1px 2px #e6e6e6);
+
+   .mask {
+       width: 100%;
+       height: 100%;
+       position: absolute;
+       overflow: hidden;
+       top: 0;
+       left: 0;
+   }
+
+    img {
+       display: block;
+       @media (max-width: 992px) and (min-width: 768px) {
+           // height: 100%;
+        }
+    }
+
+    h3 {
+       text-transform: uppercase;
+       color:map-get($scheme, default);
+       font-size: 17px;
+       padding: 10px;
+       background: rgba(0, 0, 0, 0.6);
+       margin: 50px 0 0 0;
+    }
+
+    a.info {
+       font-weight: 500;
+       display: inline-block;
+       position: relative;
+       font-family: $primary-font,sans-serif;
+       margin-top: 50px;
+       color:map-get($scheme, default);
+       padding: 7px 14px;
+       @include transition(color 0.2s);
+
+        &:before,
+        &:after {
+          position: absolute;
+          content: '';
+          left: 25%;
+          width: 50%;
+          height: 2px;
+          background:map-get($scheme, default);
+          @include opacity(0);
+          @include transition(0.3s);
+        }
+
+        &:before {
+          top: 0;
+        }
+
+        &:after {
+          bottom: 0;
+        }
+
+        &:hover {
+          text-shadow:0px 0px 20px #00c6ff;
+        }
+
+        &:hover:before {
+          @include opacity(1);
+          top:5px;
+        }
+
+        &:hover:after {
+          @include opacity(1);
+          bottom: 5px;
+        }
+
+    }
+
+    @media (max-width: 767px) {
+           margin-top: 50px;
+        }
+}
+
+.view-third {
+
+    img {
+      @include transition(0.2s);
+    }
+    .mask {
+      @include background(#000000, .5);
+      @include opacity(0);
+      @include transform(translate(460px, -100px) rotate(180deg));
+      @include transition(all 0.2s 0.4s ease-in-out);
+    }
+
+    h3 {
+        @include transform(translateY(-100px));
+        @include transition(all 0.2s ease-in-out);
+    }
+
+     a.info {
+        @include transform(translateY(-200px));
+        @include transition(all 0.2s ease-in-out);
+        @include transition(0.2s);
+    }
+
+    &:hover .mask {
+       @include opacity(1);
+       @include transition-delay(0s);
+       @include transform(translate(0px, 0px));
+    }
+
+    &:hover h3 {
+      @include transform(translateY(0px));
+      @include transition-delay(0.5s);
+    }
+     &:hover a.info {
+       @include transform(translateY(0px));
+       @include transition-delay(0.1s);
+     }
+}
+
+/*==================     Type write     ======================*/
+
+.type-wrap {
+    margin-top: 250px;
+
+    h2 {
+        line-height: 120px;
+        text-transform: uppercase;
+      strong {
+            font-size: 42px;
+
+          @media (max-width: 767px) {
+              font-size: 37px;
+          }
+        }
+
+       @media (max-width: 767px) {
+         line-height: 110px;
+         font-size: 40px;
+        }
+    }
+
+    .typed-cursor {
+        display: none;
+    }
+}
+//==================    Imports    ======================
+@import "_menu.scss";
+@import "_parallax.scss";
+/*========================================================
+                     HEADER  Section
+=========================================================*/
+header {
+    @include clearfix();
+    min-height: 630px;
+    background:url('../images/header-bg.jpg') no-repeat fixed center center;
+    @include background-size(cover);
+    color:map-get($scheme, default);
+
+    @media (max-width: 767px) {
+        text-align: center;
+    }
+}
+
+/*========================================================
+                     CONTENT  Section
+=========================================================*/
+main {
+    display: block;
+}
+
+/*==================      Well     ======================*/
+.well{
+    padding-top: 75px;
+    padding-bottom: 125px;
+
+    &__01 {
+      padding-top: 90px;
+      padding-bottom: 130px;
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+/*========================================================
+                     FOOTER  Styles
+=========================================================*/
+footer{
+    padding:35px 0;
+    background:map-get($scheme, secondary);
+    color:map-get($scheme, default);
+}

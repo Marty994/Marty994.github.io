@@ -1,0 +1,149 @@
+/*========================   Menu   ==========================*/
+
+//--------------------------------------------------------------
+//                       Menu Styles
+//--------------------------------------------------------------
+.sf-menu {
+  @include clearfix();
+  display: inline-block;
+
+  > li {
+    position: relative;
+    float: left;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+
+    & + li {
+      margin-left: 60px;
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+}
+
+//--------------------------------------------------------------
+//                     Menu item styles
+//--------------------------------------------------------------
+.sf-menu {
+  > li {
+    > a {
+      color: $primary;
+      position: relative;
+
+      &:before {
+        content: "";
+        height: 1px;
+        position: absolute;
+        left: -1px;
+        right: -1px;
+        top: 15px;
+        @include transition(.3s);
+      }
+    }
+
+
+
+    &.sfHover > a, 
+    > a:hover,
+    &.active > a {
+      &:before {
+        background-color: $primary;
+      }
+    }
+  }
+}
+
+//--------------------------------------------------------------
+//                   Sub menu lvl1 styles
+//--------------------------------------------------------------
+
+.sf-menu > li > ul {
+  transform: translateX(-50%);
+  left: 50%;
+}
+.sf-menu ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  min-width: 114px;
+  margin-top: 52px;
+  padding: 12px 0;
+  text-align: center;
+  z-index: 2;
+  @include box-sizing(border-box);
+
+}
+
+//--------------------------------------------------------------
+//                 Sub menu lvl1 item styles
+//--------------------------------------------------------------
+.sf-menu ul {
+  background: $footer-bg;
+  opacity: .9;
+  > li {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    @include box-sizing(border-box);
+
+    > a {
+      display: inline-block;
+      color: $content-bg;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 36px;
+      letter-spacing: 0;
+      position: relative;
+
+      &:before {
+        content: "";
+        height: 1px;
+        position: absolute;
+        left: -1px;
+        right: -1px;
+        top: 18px;
+        @include transition(.3s);
+      }
+    }
+
+    &.sfHover > a, > a:hover {
+
+      &:before {
+        background-color: $content-bg;
+      }
+    }
+  }
+}
+
+//--------------------------------------------------------------
+//                   Sub menu lvl2 styles
+//--------------------------------------------------------------
+.sf-menu ul ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 114px;
+  margin-top: 0;
+  z-index: 4;
+}
+
+
+//--------------------------------------------------------------
+//                      sf-with-ul styles
+//--------------------------------------------------------------
+.sf-menu > li > .sf-with-ul {
+  position: relative;
+}
+
+//--------------------------------------------------------------
+//                        Responsive
+//--------------------------------------------------------------
+@media (max-width: 767px) {
+  .sf-menu {
+    display: none;
+  }
+}

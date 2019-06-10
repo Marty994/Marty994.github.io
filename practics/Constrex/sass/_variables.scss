@@ -1,0 +1,42 @@
+//========================================================
+//                     Variables
+//=========================================================
+
+$scheme-1: (
+    primary:  #e20000,
+    primary2: #747474,
+    secondary: #333333,
+    secondary2: #454545,
+    secondary3: #999999,
+    secondary4: #f7f7f7,
+    default: #fff
+);
+
+$scheme-2: (
+    primary: #2196F3,
+    secondary: #31353d,
+    default: #cacaca
+);
+
+$scheme-3: (
+    primary: #66BB6A,
+    secondary: #31353d,
+    default: #cacaca
+);
+
+$scheme-4: (
+    primary: #e20000,
+    secondary: #31353d,
+    default: #cacaca
+);
+
+$scheme-5: (
+    primary: #78909C,
+    secondary: #31353d,
+    default: #cacaca
+);
+
+$schemes: ($scheme-1, $scheme-2, $scheme-3, $scheme-4, $scheme-5);
+
+$default-font: 'Open Sans', sans-serif;
+$robo:'Roboto', sans-serif;

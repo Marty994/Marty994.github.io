@@ -1,0 +1,48 @@
+/*==================  Stuck menu  ======================*/
+$stuck-bg: #444;
+$stuck-bc: #333333;
+
+.stuck_container {
+	padding: 22px 0;
+}
+.has-camera-slider .stuck_container {
+	width: 100%;
+	padding: 10px 0;
+	background: transparent;
+	position: absolute;
+	top: 10px;
+	z-index: 1;
+}
+.isStuck {
+  background: $stuck-bg;
+  @include opacity(.9);
+  z-index: 999;
+  border-bottom: 1px solid $stuck-bc;
+  padding: 10px 0;
+}
+.has-camera-slider .isStuck {
+	background: $stuck-bg;
+}
+
+@media only screen and (max-width: 979px) {
+  .isStuck {
+    display: none !important;
+  }
+}
+.stuck_inner {
+		@include clearfix();
+		width: 1170px;
+		margin: 0 auto;
+
+	 @media (max-width: 1199px) {
+	     width: 940px;  
+	  }
+	  @media (max-width: 992px) {
+	     width: 720px;  
+	  }
+	  @media (max-width: 768px) {
+	    margin-right: auto;
+	    margin-left: auto;
+	    width: 100%;
+	  }
+	}

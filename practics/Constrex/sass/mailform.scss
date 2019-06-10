@@ -1,0 +1,118 @@
+@import "_mixins.scss";
+@import "_variables.scss";
+
+$scheme: nth($schemes,1);
+/*========================================================
+                      Contact Form
+=========================================================*/
+
+$input-height: 50px;
+$input-offset-top: 28px;
+$input-padding: 10px 13px;
+$input-font-family: $default-font;
+$input-font-size: 15px;
+$input-line-height: 20px;
+$input-color:#747474;
+$input-border-radius: none;
+$input-brdr: 1px solid #747474;
+$input-font-weight: inherit;
+$input-background: transperent;
+$textarea-height: 163px;
+$placeholder-clr: $input-color;
+$placeholder-opacity: 1;
+
+/* MF
+========================================================*/
+.mailform {
+  position: relative;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6px;
+
+  fieldset {
+    border: none;
+
+    &.row {
+      margin-top: -4px;
+    }
+  }
+
+  
+  * {
+    @include box-sizing(border-box);
+  }
+}
+
+.mailform label {
+  position: relative;
+  display: block;
+  width: 100%;
+ 
+  .mailform label > &:first-child {
+    margin-top: 0;
+  }
+
+  input, select, textarea {
+    display: block;
+    width: 100%;
+    margin-top: $input-offset-top;
+    -webkit-appearance: none;
+    outline: none;
+    font-family: $input-font-family;
+    font-size: $input-font-size;
+    padding: $input-padding;
+    line-height: $input-line-height;
+    color: $input-color;
+    background: $input-background;
+    border-bottom: $input-brdr;
+    @include border-radius($input-border-radius);
+
+    &:-moz-placeholder {
+      color: $placeholder-clr;
+      opacity: $placeholder-opacity;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $placeholder-clr;
+      opacity: $placeholder-opacity;
+    }
+
+    &::-moz-placeholder {
+      color: $placeholder-clr;
+      opacity: $placeholder-opacity;
+    }
+
+    &:-ms-input-placeholder {
+      color: $placeholder-clr;
+      opacity: $placeholder-opacity;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    overflow: auto;
+    height: $textarea-height;
+    margin-top: 60px;
+    border: 1px solid #747474;
+  }
+
+  @media (max-width: 1365px) {
+    margin-top: 30px;
+  }
+}
+
+@import "mailform_modules/_mf-animation.scss";
+@import "mailform_modules/_mf-placeholder.scss";
+@import "mailform_modules/_mf-validation.scss";
+@import "mailform_modules/_mf-submit.scss";
+@import "mailform_modules/_mf-icon.scss";
+@import "mailform_modules/_mf-select.scss";
+@import "mailform_modules/_mf-datepicker.scss";
+
+
+
+
+
+
+

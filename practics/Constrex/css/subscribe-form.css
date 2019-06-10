@@ -1,0 +1,101 @@
+/*==================     Subscribe Form     ======================*/
+.subscribe-form {
+  position: relative;
+  display: block;
+  left: 40px; }
+  .subscribe-form h2 {
+    float: left;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 30px;
+    color: #fff; }
+  .subscribe-form label {
+    display: inline-block;
+    position: relative;
+    padding: 20.5px 10px 20.5px;
+    background: #ffffff;
+    border: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  .subscribe-form label.name {
+    width: 404px; }
+  .subscribe-form label.email {
+    width: 404px;
+    margin-right: 7px; }
+    @media screen and (max-width: 991px) {
+      .subscribe-form label.email {
+        margin: 0;
+        width: 100%; } }
+  .subscribe-form input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    vertical-align: baseline;
+    box-shadow: none;
+    color: #454545;
+    display: block;
+    width: 100%;
+    padding: 0 10px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 22px;
+    height: 22px; }
+  .subscribe-form a[data-type="submit"] {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 20px 61px;
+    text-align: center;
+    background: #454545;
+    color: #fff; }
+    .subscribe-form a[data-type="submit"]:hover {
+      background: #121212; }
+    @media screen and (max-width: 1200px) {
+      .subscribe-form a[data-type="submit"] {
+        margin-top: 25px; } }
+  @media screen and (max-width: 1200px) {
+    .subscribe-form {
+      text-align: center; } }
+  @media screen and (max-width: 991px) {
+    .subscribe-form {
+      left: 0;
+      margin: 25px 0 0 0; } }
+
+.subscribe-form .error, .subscribe-form .success {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: -10px;
+  text-align: left;
+  padding: 4px 10px;
+  left: 5px;
+  right: 5px;
+  font-size: 10px;
+  line-height: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #454545; }
+.subscribe-form .error {
+  display: none;
+  color: #f00;
+  overflow: hidden;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease; }
+.subscribe-form label.invalid .error {
+  display: block; }
+.subscribe-form .success {
+  display: none;
+  color: #0f0; }
+
+@media (max-width: 979px) {
+  .subscribe-form label.name,
+  .subscribe-form label.email {
+    display: block;
+    width: 100%; } }
+
+/*# sourceMappingURL=subscribe-form.css.map */

@@ -1,0 +1,147 @@
+ /*========================   Menu   ==========================*/
+
+ //--------------------------------------------------------------
+ //                       Menu Styles
+ //--------------------------------------------------------------
+ .sf-menu {
+   @include clearfix;
+   display: inline-block;
+
+   > li {
+     position: relative;
+     float: left;
+
+     & + li {
+       margin-left: 46px;
+     }
+   }
+
+   a {
+     display: block;
+   }
+ }
+ .stuck_container {
+   @include clearfix;
+ }
+ //--------------------------------------------------------------
+ //                     Menu item styles
+ //--------------------------------------------------------------
+ .sf-menu {
+
+   > li { 
+
+      > a {
+
+         color:map-get($scheme, default);
+         font-size: 18px;
+         text-transform: uppercase;
+         position: relative;
+       }
+
+       &.sfHover > a, > a:hover {
+         color: map-get($scheme,  primary);
+       }
+
+       &.active > a {
+         color: map-get($scheme, primary);
+       }
+   }
+ }
+
+// //--------------------------------------------------------------
+// //                   Sub menu lvl1 styles
+// //--------------------------------------------------------------
+
+ .sf-menu ul {
+     display: none;
+     position: absolute;
+     top: 79%;
+     left: -75%;
+     width: 142px;
+     margin-top: 19px;
+     padding: 23px 15px 15px 0;
+     background: map-get($scheme, default);
+     z-index: 2;
+     @include box-sizing(border-box);
+   }
+   .sf-menu > li > ul:before {
+       content: "";
+       display: block;
+       position: absolute;
+       z-index: 1;
+       top: -5px;
+       left: 45%;
+       width: 0;
+       height: 0;
+       border-style: solid;
+       border-width: 0 7px 7px 7px;
+       border-color: transparent transparent #fff transparent;
+   }
+
+ //--------------------------------------------------------------
+ //                 Sub menu lvl1 item styles
+ //--------------------------------------------------------------
+ .sf-menu ul {
+   > li {
+      margin-top: 4px;
+     > a {
+       font-weight: 300;
+       text-indent: 10px;
+       color: #9d9394;
+       display: block;
+       padding:3px 0;
+       font-size: 14px;
+       line-height: 22px;
+     }
+
+     &.sfHover > a, > a:hover {
+       color:map-get($scheme, default);
+       background: map-get($scheme, primary);
+     }
+   }
+ }
+
+ //--------------------------------------------------------------
+ //                   Sub menu lvl2 styles
+ //--------------------------------------------------------------
+ .sf-menu ul ul {
+   background:map-get($scheme, primary);
+   top: 17px;
+   left: 103%;
+   width: 142px;
+   padding: 21px 15px 15px 0px;
+   z-index: 4;
+ }
+
+ //--------------------------------------------------------------
+ //                 Sub menu lvl2 item styles
+ //--------------------------------------------------------------
+ .sf-menu ul ul {
+   > li {
+     > a {
+       color:map-get($scheme, default);
+     }
+
+    &.sfHover > a, > a:hover {
+      color: map-get($scheme, primary);
+       background: map-get($scheme, default);
+     }
+   }
+ }
+
+ //--------------------------------------------------------------
+ //                      sf-with-ul styles
+ //--------------------------------------------------------------
+ .sf-menu > li > .sf-with-ul {
+   position: relative;
+
+}
+
+ //--------------------------------------------------------------
+ //                        Responsive
+ //--------------------------------------------------------------
+ @media (max-width: 767px) {
+   .sf-menu {
+     display: none;
+   }
+ }

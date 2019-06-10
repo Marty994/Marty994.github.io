@@ -1,0 +1,37 @@
+/*==================  Stuck menu  ======================*/
+
+.stuck_container {
+    padding: 17px 0 20px;
+}
+
+.stuck_inner {
+  .background(fade(#222222, 15%));
+  padding: 20px 0;
+}
+
+.isStuck {
+  z-index: 999;
+  padding: 0;
+
+  .stuck_inner {
+    .background(fade(#222222, 95%));
+    padding: 0;
+  }
+
+  .brand {
+  	.brand_name {
+  		background-size: 60px;
+  	}
+  }
+
+  .sf-menu ul {
+  	margin-top: 23px;
+  }
+}
+
+@media only screen and (max-width: 979px) {
+
+  .isStuck {
+    display: none !important;
+  }
+}

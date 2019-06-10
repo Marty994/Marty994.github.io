@@ -1,0 +1,97 @@
+/*==================     Subscribe Form     ======================*/
+.subscribe-form {
+  font-family: "Open Sans", sans-serif;
+  margin: 21px 0 0;
+  position: relative;
+  display: block; }
+  .subscribe-form label {
+    display: inline-block;
+    position: relative;
+    padding: 9px 10px 9px;
+    padding: 26px 36px;
+    background: transparent;
+    border: 3px solid #fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px; }
+  .subscribe-form label.name {
+    width: 368px; }
+  .subscribe-form label.email {
+    width: 368px; }
+  .subscribe-form input {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    vertical-align: baseline;
+    box-shadow: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+    margin: 0;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 22px;
+    height: 22px;
+    text-transform: uppercase; }
+  .subscribe-form a[data-type="submit"] {
+    display: inline-block;
+    padding: 28px 47px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #666b70;
+    color: #fff;
+    margin-left: 30px;
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    border-radius: 28px; }
+    .subscribe-form a[data-type="submit"]:hover {
+      background: #424548; }
+    .subscribe-form a[data-type="submit"]:active {
+      background: #292b2d; }
+
+.subscribe-form .error, .subscribe-form .success {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: -10px;
+  text-align: left;
+  padding: 4px 10px;
+  left: 5px;
+  right: 5px;
+  font-size: 10px;
+  line-height: 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #2196F3; }
+.subscribe-form .error {
+  display: none;
+  color: #f00;
+  overflow: hidden;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease; }
+.subscribe-form label.invalid .error {
+  display: block; }
+.subscribe-form .success {
+  display: none;
+  color: #0f0; }
+
+@media (max-width: 1200px) {
+  .subscribe-form label.name,
+  .subscribe-form label.email {
+    display: block;
+    width: 100%; }
+  .subscribe-form * + label,
+  .subscribe-form * + a[data-type='submit'] {
+    margin-top: 15px; }
+
+  .subscribe-form {
+    text-align: center; } }
+
+/*# sourceMappingURL=subscribe-form.css.map */
