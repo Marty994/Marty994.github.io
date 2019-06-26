@@ -509,6 +509,7 @@ strong {
 
 .product-tipe {
   margin-top: 10px;
+  min-height: 48px;
 }
 
 .product-tipe a {
