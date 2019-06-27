@@ -472,12 +472,19 @@ strong {
 }
 
 .product {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: -webkit-calc(20% - 0px);
+  width: calc(20% - 0px);
   min-height: 350px;
-  height: 100%;
   border: 1px solid #d0dbe6;
   border-radius: 10px;
   text-align: center;
-  padding: 15px 3rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -493,7 +500,6 @@ strong {
 }
 
 .product-img {
-  min-height: 130px;
   margin-bottom: 13px;
 }
 
@@ -505,11 +511,29 @@ strong {
   font-size: 14px;
   color: #0093ca;
   margin-bottom: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: reverse;
+  -ms-flex-direction: reverse;
+  flex-direction: reverse;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 15px;
 }
 
 .product-tipe {
-  margin-top: 10px;
+  margin-top: 5px;
   min-height: 48px;
+  padding: 0 15px;
 }
 
 .product-tipe a {
@@ -523,6 +547,7 @@ strong {
 
 .product-price {
   margin-top: 5px;
+  padding: 0 15px;
 }
 
 .product:hover {
@@ -716,6 +741,11 @@ input[type="number"] {
     width: -webkit-calc(30% - 0px);
     width: calc(30% - 0px);
   }
+
+  .product {
+    width: -webkit-calc(30% - 0px);
+    width: calc(30% - 0px);
+  }
 }
 
 @media screen and (max-width: 780px) {
@@ -736,10 +766,24 @@ input[type="number"] {
   .items {
     margin-bottom: 10px;
   }
+
+  .product {
+    width: -webkit-calc(40% - 0px);
+    width: calc(40% - 0px);
+  }
+
+  .product {
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 560px) {
   .items {
+    width: -webkit-calc(100% - 0px);
+    width: calc(100% - 0px);
+  }
+
+  .product {
     width: -webkit-calc(100% - 0px);
     width: calc(100% - 0px);
   }
