@@ -291,16 +291,16 @@ b, strong {
 	}
 }
 
-.items {
-	@include col();
-	@include size(2);
-	@include size-md(3);
-	@include size-sm(4);
-	@include size-xs(10);
-	@include sm-block() {
-		margin-bottom: 10px;
-	}
-}
+// .items {
+// 	@include col();
+// 	@include size(2);
+// 	@include size-md(3);
+// 	@include size-sm(4);
+// 	@include size-xs(10);
+// 	@include sm-block() {
+// 		margin-bottom: 10px;
+// 	}
+// }
 
 .product {
 	@include col();
