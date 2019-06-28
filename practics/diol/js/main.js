@@ -47,7 +47,7 @@ GreatBalancer(".product",".product-img",".product-title",".product-tipe",".produ
 var s_win_w = $(window).width();
 $(window).resize(function(){
   win_w = $(window).width();
-  if (win_w >= s_win_w*1.3 || win_w <= s_win_w*0.7 || win_w >= s_win_w*1.1 || win_w <= s_win_w*0.8 {
+  if (win_w >= s_win_w*1.3 || win_w <= s_win_w*0.7 || win_w >= s_win_w*1.1 || win_w <= s_win_w*0.8) {
     location.reload();
   }
 });
